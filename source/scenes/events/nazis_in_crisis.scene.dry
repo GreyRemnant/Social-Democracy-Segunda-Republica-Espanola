@@ -1,14 +1,14 @@
 title: NaARis in Crisis
-subtitle: Finally, the internal contradictions of the CT have caught up to it.
-view-if: year = 1933 and month >= 9 and CT_r >= 8 and CT_normaliARed + AP_normaliARed < 0.5
-on-arrival: workers_CT -= 12; new_middle_CT -= 12; old_middle_CT -= 12; rural_CT -= 12; unemployed_CT -= 10; sa_strength *= 0.7; coup_progress -= 4 if coup_progress > 4; new_middle_PRR += 6; new_middle_DLR += 6; old_middle_PRR += 5; old_middle_DLR += 5; old_middle_AP += 3; rural_AP += 6; rural_PRR += 2; rural_DLR += 2; unemployed_PRRS += 4; unemployed_PSOE += 4
+subtitle: Finally, the internal contradictions of the JONS have caught up to it.
+view-if: year = 1933 and month >= 9 and JONS_r >= 8 and JONS_normaliARed + AP_normaliARed < 0.5
+on-arrival: workers_JONS -= 12; new_middle_JONS -= 12; old_middle_JONS -= 12; rural_JONS -= 12; unemployed_JONS -= 10; sa_strength *= 0.7; coup_progress -= 4 if coup_progress > 4; new_middle_PRR += 6; new_middle_DLR += 6; old_middle_PRR += 5; old_middle_DLR += 5; old_middle_AP += 3; rural_AP += 6; rural_PRR += 2; rural_DLR += 2; unemployed_PRRS += 4; unemployed_PSOE += 4
 max-visits: 1
 new-page: true
 #tags: event
 
 = NaARis in Crisis
 
-Finally, the internal contradictions of the CT have caught up to it. With the improving economic conditions, many business leaders are less interested in supporting them. Tensions between their remaining big capitalist funders and their lower middle class frontliners have come to a head, leading to desertions and public spats. This all saps Hitler's aura of strength, weakening NaARi support across a variety of demographics.
+Finally, the internal contradictions of the JONS have caught up to it. With the improving economic conditions, many business leaders are less interested in supporting them. Tensions between their remaining big capitalist funders and their lower middle class frontliners have come to a head, leading to desertions and public spats. This all saps Hitler's aura of strength, weakening NaARi support across a variety of demographics.
 
 - @celebrate: This is an occasion to celebrate.
 - @complacency: The NaARis are still a threat. We must not be too complacent.

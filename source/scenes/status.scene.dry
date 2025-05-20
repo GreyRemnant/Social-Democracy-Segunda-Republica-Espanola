@@ -37,22 +37,22 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Reichstag composition:
 
-# 1928: 30, 1930: 25, 1932: 22
+# 1931: 30, 1930: 25, 1932: 22
 {!<span class="tooltip-text" title="Social Democratic Party of Germany">PSOE</span>!}: [+ PSOE_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
+# 1931: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Center Party + Bavarian People's Party">AR + BVP</span>!}: [+ AR_r +]%
-# 1928: 10, 1930: 13
+# 1931: 10, 1930: 13
 {!<span class="tooltip-text" title="Communist Party of Germany">PRRS</span>!}: [+ PRRS_r +]%
-# 1928: 5, 1930: 4 (as DstP)
+# 1931: 5, 1930: 4 (as DstP)
 {!<span class="tooltip-text" title="German Democratic Party">!}[? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]{!</span>!}: [+ PRR_r +]%
-# 1928: 9, 1930: 5
+# 1931: 9, 1930: 5
 {!<span class="tooltip-text" title="German People's Party">DLR</span>!}: [+ DLR_r +]%
-# 1928: 14, 1930: 7
+# 1931: 14, 1930: 7
 {!<span class="tooltip-text" title="German National People's Party">AP</span>!}: [+ AP_r +]%
-# 1928: 3, 1930: 18
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (NaARis)">CT</span>!}: [+ CT_r +]%
-# 1928: 9, 1930: 10
+# 1931: 3, 1930: 18
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (NaARis)">JONS</span>!}: [+ JONS_r +]%
+# 1931: 9, 1930: 10
 Others: [+ other_r +]%
 
 [? if PSOE_in_government = 1 : Budget: [+ budget +] ?]
@@ -86,7 +86,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="German National People's Party">AP</span>!}: [+ AP_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (NaARis)">CT</span>!}: [+ CT_relation : relationships +]
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (NaARis)">JONS</span>!}: [+ JONS_relation : relationships +]
 
 = Internal Factions of the PSOE
 
@@ -172,22 +172,22 @@ DLR: [+ DLR_votes +]%
 
 AP: [+ AP_votes +]%
 
-CT: [+ CT_votes +]%
+JONS: [+ JONS_votes +]%
 
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: PSOE: [+ workers_PSOE_display +]%, AR: [+ workers_AR_display +]%, PRRS: [+ workers_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ workers_PRR_display +]%, DLR: [+ workers_DLR_display +]%; AP: [+ workers_AP_display +]%, CT: [+ workers_CT_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: PSOE: [+ workers_PSOE_display +]%, AR: [+ workers_AR_display +]%, PRRS: [+ workers_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ workers_PRR_display +]%, DLR: [+ workers_DLR_display +]%; AP: [+ workers_AP_display +]%, JONS: [+ workers_JONS_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: PSOE: [+ new_middle_PSOE_display +]%, AR: [+ new_middle_AR_display +]%, PRRS: [+ new_middle_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ new_middle_PRR_display +]%, DLR: [+ new_middle_DLR_display +]%; AP: [+ new_middle_AP_display +]%, CT: [+ new_middle_CT_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: PSOE: [+ new_middle_PSOE_display +]%, AR: [+ new_middle_AR_display +]%, PRRS: [+ new_middle_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ new_middle_PRR_display +]%, DLR: [+ new_middle_DLR_display +]%; AP: [+ new_middle_AP_display +]%, JONS: [+ new_middle_JONS_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: PSOE: [+ old_middle_PSOE_display +]%, AR: [+ old_middle_AR_display +]%, PRRS: [+ old_middle_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ old_middle_PRR_display +]%, DLR: [+ old_middle_DLR_display +]%; AP: [+ old_middle_AP_display +]%, CT: [+ old_middle_CT_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: PSOE: [+ old_middle_PSOE_display +]%, AR: [+ old_middle_AR_display +]%, PRRS: [+ old_middle_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ old_middle_PRR_display +]%, DLR: [+ old_middle_DLR_display +]%; AP: [+ old_middle_AP_display +]%, JONS: [+ old_middle_JONS_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: PSOE: [+ rural_PSOE_display +]%, AR: [+ rural_AR_display +]%, PRRS: [+ rural_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ rural_PRR_display +]%, DLR: [+ rural_DLR_display +]%; AP: [+ rural_AP_display +]%, CT: [+ rural_CT_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: PSOE: [+ rural_PSOE_display +]%, AR: [+ rural_AR_display +]%, PRRS: [+ rural_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ rural_PRR_display +]%, DLR: [+ rural_DLR_display +]%; AP: [+ rural_AP_display +]%, JONS: [+ rural_JONS_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: PSOE: [+ unemployed_PSOE_display +]%, AR: [+ unemployed_AR_display +]%, PRRS: [+ unemployed_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ unemployed_PRR_display +]%, DLR: [+ unemployed_DLR_display +]%; AP: [+ unemployed_AP_display +]%, CT: [+ unemployed_CT_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: PSOE: [+ unemployed_PSOE_display +]%, AR: [+ unemployed_AR_display +]%, PRRS: [+ unemployed_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ unemployed_PRR_display +]%, DLR: [+ unemployed_DLR_display +]%; AP: [+ unemployed_AP_display +]%, JONS: [+ unemployed_JONS_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: PSOE: [+ catholics_PSOE_display +]%, AR: [+ catholics_AR_display +]%, PRRS: [+ catholics_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ catholics_PRR_display +]%, DLR: [+ catholics_DLR_display +]%; AP: [+ catholics_AP_display +]%, CT: [+ catholics_CT_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: PSOE: [+ catholics_PSOE_display +]%, AR: [+ catholics_AR_display +]%, PRRS: [+ catholics_PRRS_display +]%, [? if not PRR_name: PRR?][? if PRR_name != 0 : [+ PRR_name +]?]: [+ catholics_PRR_display +]%, DLR: [+ catholics_DLR_display +]%; AP: [+ catholics_AP_display +]%, JONS: [+ catholics_JONS_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%

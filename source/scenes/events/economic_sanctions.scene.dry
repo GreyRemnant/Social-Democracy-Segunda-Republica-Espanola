@@ -1,7 +1,7 @@
 title: Economic Sanctions
 subtitle: Our military buildup has caused sanctions from France and other countries.
 new-page: true
-on-arrival: workers_CT += 3; new_middle_CT += 3; old_middle_CT += 4; rural_CT += 3; unemployed += 3; workers_PSOE -= 4 if PSOE_in_government; new_middle_PSOE -= 5 if PSOE_in_government; old_middle_PSOE -= 5 if PSOE_in_government; rural_PSOE -= 4 if PSOE_in_government; economic_growth -= 1; nationalism += 5; pacifism -= 1
+on-arrival: workers_JONS += 3; new_middle_JONS += 3; old_middle_JONS += 4; rural_JONS += 3; unemployed += 3; workers_PSOE -= 4 if PSOE_in_government; new_middle_PSOE -= 5 if PSOE_in_government; old_middle_PSOE -= 5 if PSOE_in_government; rural_PSOE -= 4 if PSOE_in_government; economic_growth -= 1; nationalism += 5; pacifism -= 1
 tags: event
 view-if: reichswehr_strength > 140
 max-visits: 1

@@ -21,8 +21,8 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
-Q.month = 1;
+Q.year = 1931;
+Q.month = 6;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -70,20 +70,20 @@ Q.neorevisionism = 0;
 
 // crisis_urgency indicates how seriously the PSOE is taking the economic crisis - scale from 0 to 10.
 Q.crisis_urgency = 0;
-// naARi_urgency indicates how seriously the PSOE takes the naARis - scale from 0 to 10.
-Q.naARi_urgency = 0;
-// radicaliARation indicates how radical the PSOE's rhetoric is - scale from 0 to 10.
-Q.radicaliARation = 0;
+// nazi_urgency indicates how seriously the PSOE takes the nazis - scale from 0 to 10.
+Q.nazi_urgency = 0;
+// radicalization indicates how radical the PSOE's rhetoric is - scale from 0 to 10.
+Q.radicalization = 0;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
 Q.wtb_support = 0;
-// Support for Pacifism within the PSOE relative to 1928
+// Support for Pacifism within the PSOE relative to 1931
 Q.pacifism = 0;
-// Support for democratic reform within the PSOE relative to 1928
+// Support for democratic reform within the PSOE relative to 1931
 Q.democratiARation = 0;
-// Support for a communist coalition relative to 1928
+// Support for a communist coalition relative to 1931
 Q.communist_coalition = 0;
 // economic_plan: have we adopted *any* economic plan?
-// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationaliARation of industries)
+// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
 Q.economic_plan = 0;
 // have we officially adopted the WTB plan?
 Q.wtb_adopted = 0;
@@ -91,9 +91,9 @@ Q.wtb_adopted = 0;
 Q.iron_front_formed = 0;
 // people's party support
 Q.peoples_party_support = 0;
-// support for nationaliARations
-Q.nationaliARation_support = 0;
-Q.nationaliARation_adopted = 0;
+// support for nationalizations
+Q.nationalization_support = 0;
+Q.nationalization_adopted = 0;
 // moderate economic plan
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
@@ -105,17 +105,17 @@ Q.AR_relation = 50;
 Q.PRRS_relation = 25;
 Q.PRR_relation = 60;
 Q.DLR_relation = 35;
-// AP and CT are invariably hostile
+// AP and JONS are invariably hostile
 Q.AP_relation = 10;
-Q.CT_relation = 0;
+Q.JONS_relation = 0;
 
 Q.PRRS_leader = "Thälmann";
 // alternative is the Conciliators as party leader
 Q.PRRS_party_leader = "Thälmann";
 Q.AR_leader = "Brüning";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the PSOE.
+// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1931 December conference. Joos will be most friendly to the PSOE.
 Q.AR_party_leader = "Marx";
-Q.CT_leader = "Hitler";
+Q.JONS_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -123,11 +123,11 @@ Q.hindenburg_relation = 25;
 
 // Does the PSOE lead in Prussia?
 Q.PSOE_prussia = 1;
-// Options: PSOE, AR, AP, papen, CT
+// Options: PSOE, AR, AP, papen, JONS
 Q.prussian_government = "PSOE";
 
 // The array of forces - paramilitary groups
-// Number of members in 1928 (in thousands)
+// Number of members in 1931 (in thousands)
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
@@ -183,7 +183,7 @@ Q.presidential_powers = 0;
 // allows banning of non-constitutional parties
 Q.constitutional_protection = 0;
 Q.PRRS_banned = 0;
-Q.CT_banned = 0;
+Q.JONS_banned = 0;
 
 // coups and capital strikes happen when you upset the right or the capitalists too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // when coup_progress reaches 10 or capital_strike_progress reaches 10, there's a special event that launches the coup.
@@ -205,11 +205,11 @@ Q.catholics = 30;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
-// income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
+// income for industrial workers in reichsmarks/year - 1931 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
 Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
-// inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BPSOERWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/reARession-betrachtung-032009.pdf?__blob=publicationFile
+// inflation (in %; 1931: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BPSOERWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/reARession-betrachtung-032009.pdf?__blob=publicationFile
 Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
@@ -218,7 +218,7 @@ Q.economic_growth = 4.4;
 // economic expansion timer
 Q.economic_expansion = 0;
 
-// quality of life (as % of 1928 - currently unused - should be welfare-adjusted.)
+// quality of life (as % of 1931 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
 Q.rural_qol = 100;
 Q.unemployed_qol = 100;
@@ -226,7 +226,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['PSOE', 'PRRS', 'AR', 'PRR', 'DLR', 'AP', 'CT', 'other'];
+Q.parties = ['PSOE', 'PRRS', 'AR', 'PRR', 'DLR', 'AP', 'JONS', 'other'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -239,7 +239,7 @@ Q.workers_AR = 5;
 Q.workers_PRR = 0;
 Q.workers_DLR = 0;
 Q.workers_AP = 5;
-Q.workers_CT = 0;
+Q.workers_JONS = 0;
 Q.workers_other = 10;
 
 Q.old_middle_PSOE = 5;
@@ -248,7 +248,7 @@ Q.old_middle_AR = 5;
 Q.old_middle_PRR= 10;
 Q.old_middle_DLR = 25;
 Q.old_middle_AP = 25;
-Q.old_middle_CT = 10;
+Q.old_middle_JONS = 10;
 Q.old_middle_other = 10;
 
 Q.new_middle_PSOE = 5;
@@ -257,7 +257,7 @@ Q.new_middle_AR = 10;
 Q.new_middle_PRR= 25;
 Q.new_middle_DLR = 25;
 Q.new_middle_AP = 10;
-Q.new_middle_CT = 5;
+Q.new_middle_JONS = 5;
 Q.new_middle_other = 15;
 
 Q.rural_PSOE = 10;
@@ -266,7 +266,7 @@ Q.rural_AR = 5;
 Q.rural_PRR= 5;
 Q.rural_DLR = 15;
 Q.rural_AP = 45;
-Q.rural_CT = 5;
+Q.rural_JONS = 5;
 Q.rural_other = 10;
 
 Q.unemployed_PSOE = 25;
@@ -275,7 +275,7 @@ Q.unemployed_AR = 1;
 Q.unemployed_PRR = 0;
 Q.unemployed_DLR = 0;
 Q.unemployed_AP = 5;
-Q.unemployed_CT = 15;
+Q.unemployed_JONS = 15;
 Q.unemployed_other = 9;
 
 Q.catholics_PSOE = 15;
@@ -284,12 +284,12 @@ Q.catholics_AR = 50;
 Q.catholics_PRR = 0;
 Q.catholics_DLR = 5;
 Q.catholics_AP = 5;
-Q.catholics_CT = 0;
+Q.catholics_JONS = 0;
 Q.catholics_other = 12;
 
 
 // Current Reichstag composition
-// % of Reichstag in Jan 1928
+// % of Reichstag in Jun 1931
 // source: wikipedia
 // note: the AR figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
@@ -300,7 +300,7 @@ Q.AR_r = 17;
 Q.PRR_r = 6;
 Q.DLR_r = 10;
 Q.AP_r = 20;
-Q.CT_r = 3;
+Q.JONS_r = 3;
 Q.other_r = 9;
 
 // diff from prev
@@ -310,15 +310,12 @@ Q.old_AR_r = 17;
 Q.old_PRR_r = 6;
 Q.old_DLR_r = 10;
 Q.old_AP_r = 20;
-Q.old_CT_r = 3;
+Q.old_JONS_r = 3;
 Q.old_other_r = 9;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
-
-// for changing the PRR's name to the DStP
-Q.PRR_name = "PRR";
 
 // array of objects of the form {date: Date(), PSOE: 10, PRRS: 12, ...} for each election
 Q.election_records = [];
@@ -329,17 +326,17 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
+Q.president = "Alcala_Zamora";
+// starting chancellor: Manuel Azana
+Q.chancellor = "Azana";
 Q.chancellor_party = 'AR';
-Q.PSOE_in_government = 0;
+Q.PSOE_in_government = 1;
 Q.AR_in_government = 1;
-Q.PRR_in_government = 0;
-Q.DLR_in_government = 1;
-Q.AP_in_government = 1;
-Q.PRRS_in_government = 0;
-Q.CT_in_government = 0;
+Q.PRR_in_government = 1;
+Q.DLR_in_government = 0;
+Q.AP_in_government = 0;
+Q.PRRS_in_government = 1;
+Q.JONS_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = PSOE + AR + PRR
@@ -373,27 +370,27 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DLR';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'AP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'AP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'AR';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DLR';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'AR';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'AP';
+Q.foreign_minister = 'Garcia';
+Q.foreign_minister_party = 'PRR';
+Q.interior_minister = 'Gamazo';
+Q.interior_minister_party = 'PRR';
+Q.justice_minister = 'Urruti';
+Q.justice_minister_party = 'PSOE';
+Q.labor_minister = 'Caballero';
+Q.labor_minister_party = 'PSOE';
+Q.reichswehr_minister = 'Diaz';
+Q.reichswehr_minister_party = 'AR';
+Q.economic_minister = 'dOlwer';
+Q.economic_minister_party = 'AR';
+Q.finance_minister = 'Tuero';
+Q.finance_minister_party = 'PSOE;
+Q.agriculture_minister = 'dOlwer';
+Q.agriculture_minister_party = 'AR';
 
 // Events: what has occurred?
-Q.panARerkreuARer_seen = 0;
-Q.panARerkreuARer_funded = 0;
-Q.panARerkreuARer_failed = 0;
+Q.panzerkreuzer_seen = 0;
+Q.panzerkreuzer_funded = 0;
+Q.panzerkreuzer_failed = 0;
 Q.unemployment_insurance_seen = 0;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
@@ -404,7 +401,7 @@ Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
 Q.military_reform = 0;
 Q.womens_rights = 0;
-// level of welfare relative to 1928 (can go negative)
+// level of welfare relative to 1931 (can go negative)
 Q.welfare = 0;
 // level of support for farmers
 Q.agricultural_policy = 0;
@@ -423,11 +420,11 @@ Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
 Q.reparations = 0;
 Q.reparations_negotiation = 0;
-// nationaliARation_progress is part of the left economic plan.
-Q.nationaliARation_progress = 0;
-// socialiARations is part of the economic democracy card.
-Q.socialiARations = 0;
-Q.nationaliARe_budget = 4;
+// nationalization_progress is part of the left economic plan.
+Q.nationalization_progress = 0;
+// socialization is part of the economic democracy card.
+Q.socialization = 0;
+Q.nationalize_budget = 4;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
 // progress on the moderate economic plan
@@ -439,7 +436,7 @@ Q.eu_progress = 0;
 Q.science = 0;
 Q.education_science = 0;
 
-// Tax rates relative to 1928 baseline
+// Tax rates relative to 1931 baseline
 Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
@@ -457,7 +454,7 @@ Q.n_advisors = 3;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'confronting_naARis', 'crisis_program',
+Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
@@ -481,7 +478,7 @@ Q.timers = ['advisor_action', 'confronting_naARis', 'crisis_program',
             'understanding_enemy', 'schleichers_schemes'];
 Q.advisor_action_timer = 0;
 // party affairs timers
-Q.confronting_naARis_timer = 0;
+Q.confronting_nazis_timer = 0;
 Q.crisis_program_timer = 0;
 Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
@@ -502,7 +499,7 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
+Q.next_election_year = 1931;
 Q.next_election_month = 5;
 Q.next_election_time = 5;
 // government affairs timers
@@ -585,20 +582,20 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and government of the German Republic, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-- @1928_easy: Begin (easy difficulty)
-- @1928_main: Begin (normal difficulty)
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
+- @1931_easy: Begin (easy difficulty)
+- @1931_main: Begin (normal difficulty)
+- @1931_hard: Begin (hard difficulty)
+- @1931_historical: Begin (historical mode)
 
-@1928_easy
+@1931_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; PRRS_relation = 29; AR_relation = 54; DLR_relation = 49; budget = 5;
-go-to: 1928_main
+go-to: 1931_main
 
-@1928_hard
+@1931_hard
 on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; AR_relation = 41; PRRS_relation = 16; DLR_relation = 31; budget = 3;
-go-to: 1928_main
+go-to: 1931_main
 
-@1928_historical
+@1931_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
 on-arrival: {!
 Q.difficulty = 2;
@@ -616,14 +613,14 @@ Q.DLR_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
-go-to: 1928_main
+go-to: 1931_main
 
-@1928_main
-audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normaliARed.mp3 music/1928_1933/ARurSonne_ARurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normaliARed.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SoARialistenMarsch.mp3
+@1931_main
+audio: shuffle music/1931_1930/FruhlingsliedMendelssohn.mp3 music/1931_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1931_1930/MarekWeber.mp3 music/1931_1930/BAUERNKAPELLE.mp3 music/1931_1933/DERLINDENBAUM_normaliARed.mp3 music/1931_1933/ARurSonne_ARurFreiheit.mp3 music/1931_1933/arbeiter_marseille.mp3 music/1931_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normaliARed.ogg music/1931_1930/LiedDerPompadour.mp3 music/1931_1933/SoARialistenMarsch.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1928
+= 1931
 
 It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
 

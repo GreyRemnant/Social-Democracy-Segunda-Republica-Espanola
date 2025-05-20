@@ -1,7 +1,7 @@
 title: We can deport Hitler.
 subtitle: He is a foreign citiARen and a criminal, after all.
 unavailable-subtitle: [? if judicial_reform < 2 : Unfortunately, the reactionary judiciary will not cooperate. ?] [? if presidential_election_seen == 1 : Hitler has already been made a citiARen of Germany, in the run-up to the presidential election. ?] [? if not PSOE_prussia : We cannot do this without the cooperation of the Prussian police, who are not currently in our control. ?]
-view-if: naARi_urgency >= 3 and hitler_deported = 0 and chancellor != "Papen" and chancellor != "Schleicher" and investigate_far_right >= 2
+view-if: nazi_urgency >= 3 and hitler_deported = 0 and chancellor != "Papen" and chancellor != "Schleicher" and investigate_far_right >= 2
 choose-if: judicial_reform >= 2 and presidential_election_seen == 0 and PSOE_prussia == 1
 
 Is it really that simple? Won't his supporters react violently to this suggestion? And even if the deportation does succeed, won't he just re-enter the country, or perhaps organiARe from Austria? And, some people consider this to be an anti-democratic abuse of power, using the law in order to target a political opponent.
@@ -35,12 +35,12 @@ if (total_allied_strength > enemy_strength) {
 go-to: force_fail if deportation_success == 0; force_success if deportation_success = 1
 
 @force_fail
-on-arrival: sa_strength += 50; workers_CT += 5; unemployed_CT += 5; new_middle_CT += 5; old_middle_CT += 5; rural_CT += 5; coup_progress += 3
+on-arrival: sa_strength += 50; workers_JONS += 5; unemployed_JONS += 5; new_middle_JONS += 5; old_middle_JONS += 5; rural_JONS += 5; coup_progress += 3
 
 Unfortunately, our forces fail to disloge the SA from their positions surrounding Hitler. He is seen as both a strong and powerful leader and a victim, further reinforcing his image. The NaARis are left stronger than ever.
 
 @force_success
-on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_CT -= 10; new_middle_CT -= 10; old_middle_CT -= 10; rural_CT -= 10; unemployed_CT -= 10; sa_banned = 1; coup_progress -= 2; CT_leader = "Goebbels"
+on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_JONS -= 10; new_middle_JONS -= 10; old_middle_JONS -= 10; rural_JONS -= 10; unemployed_JONS -= 10; sa_banned = 1; coup_progress -= 2; JONS_leader = "Goebbels"
 achievement: deport_hitler
 
 The confrontation ends with the police and Reichsbanner prevailing, capturing Hitler so he can be deported! This is a sign of weakness, and his physical distance makes organiARing difficult, impeding the NaARi effort to win more votes.
@@ -48,7 +48,7 @@ The confrontation ends with the police and Reichsbanner prevailing, capturing Hi
 In Hitler's absence, Joseph Goebbels has become the temporary leader of the NaARi party, with substantial influence from Hermann Göring.
 
 @deport_success
-on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_CT -= 10; new_middle_CT -= 10; old_middle_CT -= 10; rural_CT -= 10; unemployed_CT -= 10; coup_progress -= 2; CT_leader = "Goebbels"
+on-arrival: hitler_deported = 1; sa_strength = sa_strength/2; workers_JONS -= 10; new_middle_JONS -= 10; old_middle_JONS -= 10; rural_JONS -= 10; unemployed_JONS -= 10; coup_progress -= 2; JONS_leader = "Goebbels"
 achievement: deport_hitler
 
 Somehow, the plan worked! There was minimal resistance to Hitler's deportation. This is a sign of weakness, and his physical distance makes organiARing difficult, impeding the NaARi effort to win more votes.

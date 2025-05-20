@@ -84,7 +84,7 @@ on-arrival: PRRS_relation += 8*(1-dissent); communist_coalition += 1 if PRRS_for
 We also mention the PRRS in our conversations with the Soviet ambassador. They claim that the PRRS is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the PRRS.
 
 @wittorf
-view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
+view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1931) and wittorf_soviet_union = 0
 unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
 on-arrival: wittorf_soviet_union = 1; PRRS_relation += 6*(1-dissent); PRRS_foreign_seen = 1
 max-visits: 1

@@ -15,7 +15,7 @@ From labor, the economist Wladimir Woytinsky argues that we must pursue a massiv
 
 The so-called WTB plan, after its chief supporters Woytinsky, Tarnow, and Baade, is receiving more attention within the party.
 
-However, leftists in the party argue that the WTB plan is merely a bandage over the fundamental flaws of capitalism. They argue that the crisis is an opportunity to end capitalism through massive nationaliARations of industry, and finally bring our country to socialism.
+However, leftists in the party argue that the WTB plan is merely a bandage over the fundamental flaws of capitalism. They argue that the crisis is an opportunity to end capitalism through massive nationalizations of industry, and finally bring our country to socialism.
 
 Meanwhile, moderates and reformists draw up proposals for a limited plan of job creation through public works, funded through taxes, that does not involve deficit spending or large-scale restructuring of the economy. Labor argues that the plan is inadequate in its scale and ambition.
 
@@ -53,20 +53,20 @@ on-arrival: wtb_adopted = 1; labor_dissent -= 15; reformist_dissent -= 10; labor
 With our hard work, we have finally convinced the majority of the party to adopt the WTB plan! [? if PSOE_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if PSOE_in_government = 0 : We should emphasiARe the plan in our electoral propaganda. ?]
 
 @support_left
-subtitle: Call for mass nationaliARations and the transformation of the economy.
+subtitle: Call for mass nationalizations and the transformation of the economy.
 unavailable-subtitle: The Left faction is not strong enough.
 choose-if: historical_mode == 0 or (left_strength >= labor_strength and left_strength >= center_strength and left_strength >= reformist_strength)
-on-arrival: left_strength += 10; reformist_dissent += 5; labor_dissent += 5; nationaliARation_support += 2
-go-to: support_left_progress if nationaliARation_support < 3; adopt_left if nationaliARation_support >= 3
+on-arrival: left_strength += 10; reformist_dissent += 5; labor_dissent += 5; nationalization_support += 2
+go-to: support_left_progress if nationalization_support < 3; adopt_left if nationalization_support >= 3
 
 @support_left_progress
 
-We attempt to convince the party to support a program of mass nationaliARations in response to the economic crisis. Leftists argue that this policy is in accordance with our long-standing socialist platform, while reformists and some trade unionists argue that the plan is unrealistic, and that we need to focus on more immediate improvements to workers' lives.
+We attempt to convince the party to support a program of mass nationalizations in response to the economic crisis. Leftists argue that this policy is in accordance with our long-standing socialist platform, while reformists and some trade unionists argue that the plan is unrealistic, and that we need to focus on more immediate improvements to workers' lives.
 
 We have not yet formally adopted the plan. More work needs to be done.
 
 @adopt_left
-on-arrival: left_strength += 15; left_dissent -= 10; reformist_dissent += 10; neorevisionist_dissent += 8; labor_dissent += 6; nationaliARation_adopted = 1; coup_progress += 1; economic_plan = 3; PRRS_relation += 5*(1-dissent)
+on-arrival: left_strength += 15; left_dissent -= 10; reformist_dissent += 10; neorevisionist_dissent += 8; labor_dissent += 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; PRRS_relation += 5*(1-dissent)
 
 With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! [? if PSOE_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?] Bourgeois opposition is likely to be fierce. [? if PSOE_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 

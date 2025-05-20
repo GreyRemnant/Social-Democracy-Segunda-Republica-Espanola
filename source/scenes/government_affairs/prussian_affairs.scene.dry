@@ -48,7 +48,7 @@ on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; de
 The bureaucracy is deeply reactionary, and many abuse their power to favor the political right. By removing the pro-monarchy and pro-dictatorship elements, we can democratiARe it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
 @ban_sa
-view-if: naARi_urgency >= 3 and sa_banned == 0
+view-if: nazi_urgency >= 3 and sa_banned == 0
 on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; DLR_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6;
 
 As it turns out, the NaARi SA has many allies in the police and bureaucracy. Our relationship with the police weakens, and the SA can still organiARe illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the SA is substantially weakened by our ban. ?] 

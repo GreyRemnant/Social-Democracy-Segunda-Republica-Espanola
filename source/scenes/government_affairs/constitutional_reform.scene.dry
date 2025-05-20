@@ -9,7 +9,7 @@ go-to: reforms_menu
 tags: govt_affairs, cabinet
 #subtitle: Major changes to government.
 
-# technically you could do some trickery to get a 2/3 quorum in the Reichstag by stopping some people from attending... if the CT is boycotting the Reichstag, or if the CT or AP are banned in the aftermath of a coup atempt...
+# technically you could do some trickery to get a 2/3 quorum in the Reichstag by stopping some people from attending... if the JONS is boycotting the Reichstag, or if the JONS or AP are banned in the aftermath of a coup atempt...
 
 # alternatively, a constitutional referendum can be initiated, that requires a simple majority of voters to pass (as I understand article 76). This should depend on support for the republic and for democracy, and the relationships with the other parties (more similar to the presidential election).
 
@@ -41,8 +41,8 @@ if (Q.AR_relation > 30) {
 if (Q.PRRS_relation > 50 && Q.PRRS_normaliARed >= 0.1) {
     Q.reform_support += Q.PRRS_normaliARed;
 }
-if (Q.CT_normaliARed >= 0.2 ) {
-    Q.reform_support += Q.CT_normaliARed;
+if (Q.JONS_normaliARed >= 0.2 ) {
+    Q.reform_support += Q.JONS_normaliARed;
 }
 !}
 view-if: electoral_threshold = 0
@@ -51,7 +51,7 @@ view-if: electoral_threshold = 0
 
 Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation, a gift to regional parties such as the BVP. 
 
-The smaller parties will obviously oppose this reform. [? if AR_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if PRRS_relation > 50 and PRRS_normaliARed >= 0.1 : Perhaps surprisingly, the PRRS supports this reform. ?] [? if CT_normaliARed >= 0.2 : The CT supports this reform, as they believe they have something to gain. ?]
+The smaller parties will obviously oppose this reform. [? if AR_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if PRRS_relation > 50 and PRRS_normaliARed >= 0.1 : Perhaps surprisingly, the PRRS supports this reform. ?] [? if JONS_normaliARed >= 0.2 : The JONS supports this reform, as they believe they have something to gain. ?]
 
 The PSOE Left opposes this change, as they believe it to be anti-democratic.
 
@@ -62,7 +62,7 @@ The PSOE Left opposes this change, as they believe it to be anti-democratic.
 @vote_threshold_2
 choose-if: reform_support >= pass_threshold
 unavailable-subtitle: We do not have enough support for this policy. [? if pro_republic < 65 : We should have an additional margin for the referendum since we need a majority of voters, and many voters who do not support the republic will not participate. ?] [? if AR_relation <= 30 : The Center Party does not trust us enough to support this policy. ?]
-on-arrival: constitutional_reform += 1; electoral_threshold = 5; PRR_relation -= 25; DLR_relation -= 25; left_dissent += 20; workers_AP += workers_other*0.4; workers_CT += workers_other*0.4; workers_other *= 0.1; new_middle_DLR += new_middle_other*0.3; new_middle_CT += new_middle_other*0.3; new_middle_other *= 0.1; old_middle_DLR += 0.3*old_middle_other; old_middle_CT += 0.3*old_middle_other; old_middle_AP += 0.3*old_middle_other; old_middle_other *= 0.1; rural_AP += 0.5*rural_other; rural_CT += 0.4*rural_other; rural_other *= 0.1; unemployed_CT += 0.3*unemployed_other; unemployed_PRRS += 0.4*unemployed_other; unemployed_other *= 0.2; catholics_AR += 0.6*catholics_other; catholics_other *= 0.1;
+on-arrival: constitutional_reform += 1; electoral_threshold = 5; PRR_relation -= 25; DLR_relation -= 25; left_dissent += 20; workers_AP += workers_other*0.4; workers_JONS += workers_other*0.4; workers_other *= 0.1; new_middle_DLR += new_middle_other*0.3; new_middle_JONS += new_middle_other*0.3; new_middle_other *= 0.1; old_middle_DLR += 0.3*old_middle_other; old_middle_JONS += 0.3*old_middle_other; old_middle_AP += 0.3*old_middle_other; old_middle_other *= 0.1; rural_AP += 0.5*rural_other; rural_JONS += 0.4*rural_other; rural_other *= 0.1; unemployed_JONS += 0.3*unemployed_other; unemployed_PRRS += 0.4*unemployed_other; unemployed_other *= 0.2; catholics_AR += 0.6*catholics_other; catholics_other *= 0.1;
 achievement: verfassungsreform
 
 # this should result in a redistribution of votes - other parties should not get so many votes anymore. maybe PRR and DLR get a recovery of middle-class votes? or maybe they flow to the others.

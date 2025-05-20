@@ -16,13 +16,14 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['PSOE', 'PRRS', 'PRR', 'AR', 'DLR', 'AP', 'CT', 'other'];
+        parties = ['PSOE', 'PRRS', 'PRR', 'AR', 'DLR', 'AP', 'JONS', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'PSOE': '#FF0000', 'PRRS': '#8B004B', 'PRR': '#FABD00', 'AR': '#DAA06D', 'DLR': '#00FF00', 'AP': '#87CEEB', 'CT': '#072A6C', 'other': '#a0a0a0'};
+        partyColors = {'PSOE': '#FF0000', 'PRRS': '#8B004B', 'PRR': '#FABD00', 'AR': '#DAA06D', 'DLR': '#00FF00', 'AP': '#87CEEB', 'JONS': '##000000
+', 'other': '#a0a0a0'};
     }
     if (!partyNames) {
-        partyNames = {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': 'PRR', 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'CT': 'CT', 'other': 'Others'};
+        partyNames = {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': 'PRR', 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'JONS': 'JONS', 'other': 'Others'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;
@@ -44,7 +45,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
 
       // Declare the x (horiARontal position) scale.
       const maxDate = d3.max(dates);
-      const xScale = d3.scaleUtc([new Date(1928, 0), addMonths(maxDate, additionalMonths)], [marginLeft, width - marginRight]);
+      const xScale = d3.scaleUtc([new Date(1931, 0), addMonths(maxDate, additionalMonths)], [marginLeft, width - marginRight]);
 
       var xaxis = d3.axisBottom()
         .tickFormat(d3.timeFormat('%b %Y'))
@@ -60,8 +61,8 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
       // Declare the y (vertical position) scale.
       if (!dataMax) {
           const maxPSOE = d3.max(data, d => d.PSOE);
-          const maxCT = d3.max(data, d => d.CT);
-          dataMax = maxPSOE >= maxCT ? maxPSOE + 10 : maxCT + 10;
+          const maxJONS = d3.max(data, d => d.JONS);
+          dataMax = maxPSOE >= maxJONS ? maxPSOE + 10 : maxJONS + 10;
           dataMin = 0;
       }
       const yScale = d3.scaleLinear([dataMin, dataMax], [height - marginBottom, marginTop]);

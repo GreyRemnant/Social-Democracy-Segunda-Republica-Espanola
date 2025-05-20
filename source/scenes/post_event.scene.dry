@@ -261,15 +261,15 @@ if (Q.month_actions >= 1) {
     if (Q.pro_republic < (Q.PSOE_votes + Q.PRR_votes + Q.AR_votes - 3)) {
         if (Q.new_middle_PSOE > 0) {
             Q.new_middle_PSOE -= 5/12;
-            Q.new_middle_CT += 3/12;
+            Q.new_middle_JONS += 3/12;
         }
         if (Q.old_middle_PSOE > 0) {
             Q.old_middle_PSOE -= 5/12;
-            Q.old_middle_CT += 3/12;
+            Q.old_middle_JONS += 3/12;
         }
         if (Q.rural_PSOE > 0) {
             Q.rural_PSOE -= 5/12;
-            Q.rural_CT += 3/12;
+            Q.rural_JONS += 3/12;
         }
         if (Q.workers_PSOE_normaliARed > 30) {
             Q.workers_PSOE -= 4/12;
@@ -282,15 +282,15 @@ if (Q.month_actions >= 1) {
         }
         if (Q.new_middle_PRR > 0) {
             Q.new_middle_PRR -= 4/12;
-            Q.new_middle_CT += 3/12;
+            Q.new_middle_JONS += 3/12;
         }
         if (Q.old_middle_PRR > 0) {
             Q.old_middle_PRR -= 5/12;
-            Q.old_middle_CT += 4/12;
+            Q.old_middle_JONS += 4/12;
         }
         if (Q.rural_PRR > 0) {
             Q.rural_PRR -= 5/12;
-            Q.rural_CT += 4/12;
+            Q.rural_JONS += 4/12;
         }
     }
 
@@ -298,38 +298,38 @@ if (Q.month_actions >= 1) {
     if (Q.year == 1929) {
         Q.unemployed += 3/12;
         Q.inflation -= 1/12;
-        // increase CT vote share
-        Q.new_middle_CT += 10/12;
-        Q.old_middle_CT += 10/12;
+        // increase JONS vote share
+        Q.new_middle_JONS += 10/12;
+        Q.old_middle_JONS += 10/12;
         Q.new_middle_PRR -= 5/12;
         Q.new_middle_DLR -= 5/12;
         Q.workers_PRRS += 5/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 100/12;
         Q.rural_AP -= 15/12;
-        Q.rural_CT += 10/12;
-        Q.unemployed_CT += 18/12;
+        Q.rural_JONS += 10/12;
+        Q.unemployed_JONS += 18/12;
     } else if (Q.year == 1930) {
-        Q.rural_CT += 10/12;
+        Q.rural_JONS += 10/12;
         Q.rural_AP -= 15/12;
         Q.new_middle_DLR -= 5/12;
         Q.old_middle_DLR -= 6/12;
         Q.new_middle_PRR -= 5/12;
         Q.old_middle_PRR -= 6/12;
-        Q.new_middle_CT += 10/12;
-        Q.old_middle_CT += 10/12;
+        Q.new_middle_JONS += 10/12;
+        Q.old_middle_JONS += 10/12;
         Q.new_middle_other += 4/12;
         Q.old_middle_other += 4/12;
-        Q.unemployed_CT += 8/12;
+        Q.unemployed_JONS += 8/12;
         Q.rural_other += 5/12;
 
         Q.workers_AR += 1/12;
         Q.old_middle_AR += 2/12;
         Q.new_middle_AR += 2/12;
         if (!Q.works_program) {
-            Q.rural_CT += 3/12;
-            Q.old_middle_CT += 5/12;
-            Q.workers_CT += 2/12;
+            Q.rural_JONS += 3/12;
+            Q.old_middle_JONS += 5/12;
+            Q.workers_JONS += 2/12;
             Q.workers_other += 5/12;
             Q.workers_PRRS += 2/12;
         }
@@ -345,22 +345,22 @@ if (Q.month_actions >= 1) {
         Q.sa_strength += 50/12;
         Q.sh_strength += 50/12;
         Q.sa_militancy += 0.1/12;
-        Q.old_middle_CT += 10/12;
+        Q.old_middle_JONS += 10/12;
         Q.rural_other -= 5/12;
-        Q.rural_CT += 9/12;
-        // TODO: economic policies should reduce CT rurals
+        Q.rural_JONS += 9/12;
+        // TODO: economic policies should reduce JONS rurals
         if (!Q.works_program) {
             Q.old_middle_DLR -= 6/12;
             Q.new_middle_DLR -= 6/12;
             Q.rural_DLR -= 6/12;
             Q.workers -= 4/12;
-            Q.unemployed_CT += 7/12;
+            Q.unemployed_JONS += 7/12;
             Q.unemployed_PRRS += 2/12;
             Q.rural_other -= 12/12;
-            Q.rural_CT += 12/12;
-            Q.new_middle_CT += 12/12;
-            Q.old_middle_CT += 12/12;
-            Q.workers_CT += 2/12;
+            Q.rural_JONS += 12/12;
+            Q.new_middle_JONS += 12/12;
+            Q.old_middle_JONS += 12/12;
+            Q.workers_JONS += 2/12;
             Q.workers_PRRS += 4/12;
             Q.sa_strength += 100/12;
             Q.sh_strength += 50/12;
@@ -368,29 +368,29 @@ if (Q.month_actions >= 1) {
             Q.old_middle_DLR -= 4/12;
             Q.new_middle_DLR -= 4/12;
             Q.rural_DLR -= 4/12;
-            Q.unemployed_CT += 4/12;
-            Q.old_middle_CT += 4/12;
-            Q.new_middle_CT += 4/12;
-            Q.rural_CT += 4/12;
+            Q.unemployed_JONS += 4/12;
+            Q.old_middle_JONS += 4/12;
+            Q.new_middle_JONS += 4/12;
+            Q.rural_JONS += 4/12;
         }
     } else if (Q.year == 1932) {
         Q.old_middle_other -= 7/12;
         Q.rural_other -= 7/12;
-        Q.old_middle_CT += 7/12;
-        Q.rural_CT += 7/12;
-        Q.unemployed_CT += 4/12;
+        Q.old_middle_JONS += 7/12;
+        Q.rural_JONS += 7/12;
+        Q.unemployed_JONS += 4/12;
         if (!Q.works_program) {
             Q.unemployed += 5/12;
             Q.inflation -= 2/12;
             Q.catholics_AR += 2/12;
             Q.workers -= 4/12;
             Q.rural_AP -= 4/12;
-            Q.rural_CT += 8/12;
-            Q.new_middle_CT += 10/12;
-            Q.old_middle_CT += 10/12;
-            Q.unemployed_CT += 8/12;
+            Q.rural_JONS += 8/12;
+            Q.new_middle_JONS += 10/12;
+            Q.old_middle_JONS += 10/12;
+            Q.unemployed_JONS += 8/12;
             Q.unemployed_PRRS += 2/12;
-            Q.workers_CT += 3/12;
+            Q.workers_JONS += 3/12;
             Q.workers_PRRS += 3/12;
             Q.sa_strength += 200/12;
             Q.new_middle_AP += 4/12;
@@ -399,16 +399,16 @@ if (Q.month_actions >= 1) {
             Q.old_middle_DLR -= 4/12;
             Q.rural_DLR -= 4/12;
         } else if (Q.unemployed > 25) {
-            Q.rural_CT += 5/12;
-            Q.unemployed_CT += 5/12;
-            Q.old_middle_CT += 5/12;
-            Q.new_middle_CT += 4/12;
+            Q.rural_JONS += 5/12;
+            Q.unemployed_JONS += 5/12;
+            Q.old_middle_JONS += 5/12;
+            Q.new_middle_JONS += 4/12;
             Q.sa_strength += 50/12;
         } else if (Q.unemployed > 20) {
-            Q.rural_CT += 2/12;
-            Q.unemployed_CT += 3/12;
-            Q.old_middle_CT += 3/12;
-            Q.new_middle_CT += 2/12;
+            Q.rural_JONS += 2/12;
+            Q.unemployed_JONS += 3/12;
+            Q.old_middle_JONS += 3/12;
+            Q.new_middle_JONS += 2/12;
         }
     } else if (Q.year >= 1933) {
         if (Q.return_to_normalcy) {
@@ -430,10 +430,10 @@ if (Q.month_actions >= 1) {
             }
         }
         if (Q.unemployed > 20) {
-            Q.rural_CT += 2/12;
-            Q.unemployed_CT += 2/12;
-            Q.old_middle_CT += 2/12;
-            Q.new_middle_CT += 2/12;
+            Q.rural_JONS += 2/12;
+            Q.unemployed_JONS += 2/12;
+            Q.old_middle_JONS += 2/12;
+            Q.new_middle_JONS += 2/12;
             if (Q.PSOE_in_government) {
                 Q.workers_PSOE -= 4/12;
             }

@@ -10,7 +10,7 @@ Herein contains relevant information about the government and politics of the Ge
 @menu
 
 - @government: Germany's system of government
-- @weimar_timeline: Timeline of the Weimar Republic before 1928
+- @weimar_timeline: Timeline of the Weimar Republic before 1931
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -34,7 +34,7 @@ Germany is divided into a number of states, each of which have their own governm
 @weimar_timeline
 go-to: menu
 
-= Timeline of the PSOE and the Republic (until 1928)
+= Timeline of the PSOE and the Republic (until 1931)
 
 **1875**: The PSOE is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the PSOE grows to become the largest party in the German Empire.
 
@@ -54,7 +54,7 @@ go-to: menu
 
 **1923**: Hyperinflation begins, largely due to the economic policy of "passive resistance" against the French occupation of the Ruhr and the Versailles reparations. The currency is rapidly devalued as prices for necessities rise to billions of Reichsmarks. The government launches a *Reichsexekution* against Saxony, which was led by a joint PSOE-PRRS government. The NaARi "Beer Hall Putsch" is launched in Munich, and fails, with the arrest of Hitler. Eventually, new policies manage to stabiliARe the currency, and the French occupation ends.
 
-**1924**: Parliamentary elections are held in May and December, the latter leading to the bourgeois-right governments that last until 1928. Hitler is released from prison. The Dawes Plan for the replayment of the Versailles reparations is negotiated, which reduces payments and increases economic growth. Germany begins to enter a period of relative stability, with the end of the hyperinflation crisis. 
+**1924**: Parliamentary elections are held in May and December, the latter leading to the bourgeois-right governments that last until 1931. Hitler is released from prison. The Dawes Plan for the replayment of the Versailles reparations is negotiated, which reduces payments and increases economic growth. Germany begins to enter a period of relative stability, with the end of the hyperinflation crisis. 
 
 **1925**:  President Friedrich Ebert dies, and new presidential elections are held, leading to the narrow election of Paul von Hindenburg in the second round. Hindenburg is a war hero and a right-wing reactionary. The PSOE adopts the Heidelberg Program as its party platform. The Locarno Treaties are signed, which confirmed Germany's post-war western borders.
 
@@ -71,22 +71,22 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Reichstag composition:
 
-# 1928: 30, 1930: 25, 1932: 22
+# 1931: 30, 1930: 25, 1932: 22
 PSOE: [+ PSOE_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
+# 1931: 15, 1930: 15, 1932: 
 AR + BVP: [+ AR_r +]%
-# 1928: 10, 1930: 13
+# 1931: 10, 1930: 13
 PRRS: [+ PRRS_r +]%
-# 1928: 5, 1930: 4 (as DstP)
+# 1931: 5, 1930: 4 (as DstP)
 [+ PRR_name +]: [+ PRR_r +]%
-# 1928: 9, 1930: 5
+# 1931: 9, 1930: 5
 DLR: [+ DLR_r +]%
-# 1928: 14, 1930: 7
+# 1931: 14, 1930: 7
 AP: [+ AP_r +]%
-# 1928: 3, 1930: 18
-CT: [+ CT_r +]%
-# 1928: 9, 1930: 10
+# 1931: 3, 1930: 18
+JONS: [+ JONS_r +]%
+# 1931: 9, 1930: 10
 Others: [+ other_r +]%
 
 PSOE position: [? if PSOE_toleration : toleration ?][? if PSOE_in_government : in government - ?][? if PSOE_toleration == 0 and PSOE_in_government == 0 and PSOE_caretaker == 0 : opposition ?][? if PSOE_caretaker : caretaker government ?]
@@ -161,45 +161,45 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-# 1928: 30, 1930: 25, 1932: 22
+# 1931: 30, 1930: 25, 1932: 22
 PSOE: [+ PSOE_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-# 1928: 15, 1930: 15, 1932: 
+# 1931: 15, 1930: 15, 1932: 
 AR + BVP: [+ AR_votes +]%
 
-# 1928: 10, 1930: 13
+# 1931: 10, 1930: 13
 PRRS: [+ PRRS_votes +]%
 
-# 1928: 5, 1930: 4 (as DstP)
+# 1931: 5, 1930: 4 (as DstP)
 [+ PRR_name +]: [+ PRR_votes +]%
 
-# 1928: 9, 1930: 5
+# 1931: 9, 1930: 5
 DLR: [+ DLR_votes +]%
 
-# 1928: 14, 1930: 7
+# 1931: 14, 1930: 7
 AP: [+ AP_votes +]%
 
-# 1928: 3, 1930: 18
-CT: [+ CT_votes +]%
+# 1931: 3, 1930: 18
+JONS: [+ JONS_votes +]%
 
-# 1928: 9, 1930: 10
+# 1931: 9, 1930: 10
 Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: PSOE: [+ workers_PSOE_display +]%, AR: [+ workers_AR_display +]%, PRRS: [+ workers_PRRS_display +]%, [+ PRR_name +]: [+ workers_PRR_display +]%, DLR: [+ workers_DLR_display +]%; AP: [+ workers_AP_display +]%, CT: [+ workers_CT_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: PSOE: [+ workers_PSOE_display +]%, AR: [+ workers_AR_display +]%, PRRS: [+ workers_PRRS_display +]%, [+ PRR_name +]: [+ workers_PRR_display +]%, DLR: [+ workers_DLR_display +]%; AP: [+ workers_AP_display +]%, JONS: [+ workers_JONS_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: PSOE: [+ new_middle_PSOE_display +]%, AR: [+ new_middle_AR_display +]%, PRRS: [+ new_middle_PRRS_display +]%, [+ PRR_name +]: [+ new_middle_PRR_display +]%, DLR: [+ new_middle_DLR_display +]%; AP: [+ new_middle_AP_display +]%, CT: [+ new_middle_CT_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: PSOE: [+ new_middle_PSOE_display +]%, AR: [+ new_middle_AR_display +]%, PRRS: [+ new_middle_PRRS_display +]%, [+ PRR_name +]: [+ new_middle_PRR_display +]%, DLR: [+ new_middle_DLR_display +]%; AP: [+ new_middle_AP_display +]%, JONS: [+ new_middle_JONS_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: PSOE: [+ old_middle_PSOE_display +]%, AR: [+ old_middle_AR_display +]%, PRRS: [+ old_middle_PRRS_display +]%, [+ PRR_name +]: [+ old_middle_PRR_display +]%, DLR: [+ old_middle_DLR_display +]%; AP: [+ old_middle_AP_display +]%, CT: [+ old_middle_CT_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: PSOE: [+ old_middle_PSOE_display +]%, AR: [+ old_middle_AR_display +]%, PRRS: [+ old_middle_PRRS_display +]%, [+ PRR_name +]: [+ old_middle_PRR_display +]%, DLR: [+ old_middle_DLR_display +]%; AP: [+ old_middle_AP_display +]%, JONS: [+ old_middle_JONS_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: PSOE: [+ rural_PSOE_display +]%, AR: [+ rural_AR_display +]%, PRRS: [+ rural_PRRS_display +]%, [+ PRR_name +]: [+ rural_PRR_display +]%, DLR: [+ rural_DLR_display +]%; AP: [+ rural_AP_display +]%, CT: [+ rural_CT_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: PSOE: [+ rural_PSOE_display +]%, AR: [+ rural_AR_display +]%, PRRS: [+ rural_PRRS_display +]%, [+ PRR_name +]: [+ rural_PRR_display +]%, DLR: [+ rural_DLR_display +]%; AP: [+ rural_AP_display +]%, JONS: [+ rural_JONS_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: PSOE: [+ unemployed_PSOE_display +]%, AR: [+ unemployed_AR_display +]%, PRRS: [+ unemployed_PRRS_display +]%, [+ PRR_name +]: [+ unemployed_PRR_display +]%, DLR: [+ unemployed_DLR_display +]%; AP: [+ unemployed_AP_display +]%, CT: [+ unemployed_CT_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: PSOE: [+ unemployed_PSOE_display +]%, AR: [+ unemployed_AR_display +]%, PRRS: [+ unemployed_PRRS_display +]%, [+ PRR_name +]: [+ unemployed_PRR_display +]%, DLR: [+ unemployed_DLR_display +]%; AP: [+ unemployed_AP_display +]%, JONS: [+ unemployed_JONS_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: PSOE: [+ catholics_PSOE_display +]%, AR: [+ catholics_AR_display +]%, PRRS: [+ catholics_PRRS_display +]%, [+ PRR_name +]: [+ catholics_PRR_display +]%, DLR: [+ catholics_DLR_display +]%; AP: [+ catholics_AP_display +]%, CT: [+ catholics_CT_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: PSOE: [+ catholics_PSOE_display +]%, AR: [+ catholics_AR_display +]%, PRRS: [+ catholics_PRRS_display +]%, [+ PRR_name +]: [+ catholics_PRR_display +]%, DLR: [+ catholics_DLR_display +]%; AP: [+ catholics_AP_display +]%, JONS: [+ catholics_JONS_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
@@ -229,9 +229,9 @@ Current relations: [+ PRRS_relation : relationships +]
 
 [? if sapd_formed: SAPD - SoARialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the PSOE, the SAPD is essentially an agglomeration of various left-wing splinter groups between the PSOE and PRRS. ?]
 
-**CT** - *NationalsoARialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or NaARis) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legaliARed.
+**JONS** - *NationalsoARialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or NaARis) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legaliARed.
 
-Current relations: [+ CT_relation : relationships +]
+Current relations: [+ JONS_relation : relationships +]
 
 **Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. Their political position usually lies between the DLR and AP. 
 
@@ -263,7 +263,7 @@ Strength: [+ sh_strength +] thousand
 
 MilitariARation: [+ sh_militancy : militancy +]
 
-**Sturmabteilung (SA)**: This is the naARi paramilitary group.
+**Sturmabteilung (SA)**: This is the nazi paramilitary group.
 
 Strength: [+ sa_strength +] thousand
 
@@ -396,10 +396,10 @@ data = data.concat([
         "seats": Q.AP_r*5,
     },
     {
-        "id": "CT",
-        "legend": "CT",
-        "name": "CT",
-        "seats": Q.CT_r*5,
+        "id": "JONS",
+        "legend": "JONS",
+        "name": "JONS",
+        "seats": Q.JONS_r*5,
     },
 ]);
 if (d3 && window) {
@@ -420,8 +420,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'PSOE': '#E3000F', 'PRRS': '#8B0000', 'PRR': '#DCCA4A', 'AR': '#000', 'DLR': '#D5AC27', 'AP': '#3f7bc1', 'CT': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': Q.PRR_name, 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'CT': 'CT', 'other': 'Others', 'sapd': 'SAPD'});
+            {'PSOE': '#E3000F', 'PRRS': '#8B0000', 'PRR': '#DCCA4A', 'AR': '#000', 'DLR': '#D5AC27', 'AP': '#3f7bc1', 'JONS': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': Q.PRR_name, 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'JONS': 'JONS', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -433,8 +433,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'PSOE': '#E3000F', 'PRRS': '#8B0000', 'PRR': '#DCCA4A', 'AR': '#000', 'DLR': '#D5AC27', 'AP': '#3f7bc1', 'CT': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': Q.PRR_name, 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'CT': 'CT', 'other': 'Others', 'sapd': 'SAPD'});
+            {'PSOE': '#E3000F', 'PRRS': '#8B0000', 'PRR': '#DCCA4A', 'AR': '#000', 'DLR': '#D5AC27', 'AP': '#3f7bc1', 'JONS': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': Q.PRR_name, 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'JONS': 'JONS', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -474,12 +474,12 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#3f7bc1'> </div></td><td>!} AP: {!</td><td>!} [+ AP_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} CT: {!</td><td>!} [+ CT_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} JONS: {!</td><td>!} [+ JONS_r +]% {!</td></tr>!}
 {!</table>!}
 
 = Election history
 
-[? if year = 1928 and month < 5 : No new elections yet. ?]
+[? if year = 1931 and month < 5 : No new elections yet. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 

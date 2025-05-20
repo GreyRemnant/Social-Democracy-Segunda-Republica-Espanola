@@ -19,9 +19,9 @@ title: Rally for class struggle
 subtitle: The core of socialism should be the struggle of the proletariat against the bourgeoisie.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; workers_PSOE += 4*(1-dissent); unemployed_PSOE += 3*(1-dissent); workers_PSOE += 4*(1-dissent) if nationaliARation_progress > 0; unemployed_PSOE += 3*(1-dissent) if nationaliARation_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_PSOE -= 3; new_middle_PSOE -= 2
+on-arrival: advisor_action_timer = 6; workers_PSOE += 4*(1-dissent); unemployed_PSOE += 3*(1-dissent); workers_PSOE += 4*(1-dissent) if nationalization_progress > 0; unemployed_PSOE += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_PSOE -= 3; new_middle_PSOE -= 2
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationaliARation_progress > 0 : Our achievements in nationaliARation have assisted our messaging. ?]
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 
 @socialist_youth

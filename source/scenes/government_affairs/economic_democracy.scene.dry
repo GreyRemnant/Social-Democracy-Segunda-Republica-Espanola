@@ -56,7 +56,7 @@ Sectorial works councils can now negotiate wage and price policies for entire ec
 @nationaliARe_1
 title: Begin to socialiARe key industries.
 subtitle: -1 budget - we should buy out industries and govern them together with workers and consumers.
-on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socialiARations += 1; workers_PSOE += 6*(1-dissent); unemployed_PSOE += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
+on-arrival: economic_democracy += 1; capital_strike_progress += 1; budget -= 1; socialization += 1; workers_PSOE += 6*(1-dissent); unemployed_PSOE += 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; capital_strike_progress += 1 if black_thursday_seen; unemployed -= 1 if unemployed > 9; economic_growth += 0.2 if economic_growth < 5
 choose-if: budget >= 1
 max-visits: 3
 

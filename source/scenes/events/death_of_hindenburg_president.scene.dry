@@ -2,7 +2,7 @@ title: The Death of Hindenburg
 subtitle: The President has died...
 new-page: true
 view-if: year = 1934 and month >= 7 and president = "Hindenburg"
-on-arrival: round = 0; hindenburg_dead = 1; president = "Bumke (acting)"; president = "Großmann (acting)" if judicial_reform >= 4; PSOE_candidate = "Eckener"; PRRS_candidate = "Thälmann"; PRRS_candidate = "MünARenberg" if PRRS_party_leader = "Conciliators"; AR_candidate = "Adenauer"; PRR_candidate = "Gessler"; CT_candidate = "Hitler"; CT_candidate = "Göring" if hitler_deported; AP_candidate = "Seldte"; DLR_candidate = "Gessler"; other_candidate = "Seldte"; is_unity_candidate = 0; sapd_candidate = PRRS_candidate;
+on-arrival: round = 0; hindenburg_dead = 1; president = "Bumke (acting)"; president = "Großmann (acting)" if judicial_reform >= 4; PSOE_candidate = "Eckener"; PRRS_candidate = "Thälmann"; PRRS_candidate = "MünARenberg" if PRRS_party_leader = "Conciliators"; AR_candidate = "Adenauer"; PRR_candidate = "Gessler"; JONS_candidate = "Hitler"; JONS_candidate = "Göring" if hitler_deported; AP_candidate = "Seldte"; DLR_candidate = "Gessler"; other_candidate = "Seldte"; is_unity_candidate = 0; sapd_candidate = PRRS_candidate;
 max-visits: 1
 face-image: img/Hindenburg_head.jpg
 tags: event
@@ -33,7 +33,7 @@ The AP will nominate FranAR Seldte, leader of the Stahlhelm paramilitary group. 
 
 Many republicans of the Center, [+ PRR_name +], and PSOE float the idea of running Hugo Eckener, a nationally renowed AReppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to NaARism.
 
-Barring that, the Center and [+ PRR_name +] are planning to run separate candidates in the first round if the PSOE runs its own candidate. The Center is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ PRR_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the DLR and other parties who dislike the AP-CT front.
+Barring that, the Center and [+ PRR_name +] are planning to run separate candidates in the first round if the PSOE runs its own candidate. The Center is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ PRR_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the DLR and other parties who dislike the AP-JONS front.
 
 As for the PSOE, we could support a joint Weimar Coalition candidate or run our own.
 [? if braun_campaign : Otto Braun is tired. He ran and failed in the previous two presidential elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if braun_campaign = 0 and not PSOE_prussia: Otto Braun is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if braun_campaign = 0 and PSOE_prussia : Otto Braun is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
@@ -375,8 +375,8 @@ set-jump: post_election
 @post_election
 on-arrival: {!
 var candidate_descs = {
-Hitler: "Adolf Hitler of the CT",
-Goring: "Hermann Göring of the CT",
+Hitler: "Adolf Hitler of the JONS",
+Goring: "Hermann Göring of the JONS",
 Seldte: "FranAR Seldte of the Stahlhelm/AP",
 Eckener: "the independent republican candidate Hugo Eckener",
 Adenauer: "Konrad Adenauer of the Center Party",
@@ -471,14 +471,14 @@ if (Q.Hitler_votes && Q.Seldte_votes) {
             Q.Adenauer_bonus = (Q.Adenauer_bonus || 0) + 0.25*Q.other_votes;
         }
     } else {
-        Q.CT_candidate = "Seldte";
+        Q.JONS_candidate = "Seldte";
     }
 } else if (Q.Goring_votes && Q.Seldte_votes) {
     if (Q.Goring_votes > Q.Seldte_votes) {
         Q.AP_candidate = "Göring";
         Q.other_candidate = "Göring";
     } else {
-        Q.CT_candidate = "Seldte";
+        Q.JONS_candidate = "Seldte";
     }
 }
 // 2. If Adenauer & Gessler are both running and neither are part of the PSOE coalition, the smaller of these drops out.
@@ -499,9 +499,9 @@ if (Q.AR_candidate == "Adenauer" && (Q.PRR_candidate == "Gessler" || Q.DLR_candi
         Q.AR_candidate = "Gessler";
         Q.Gessler_bonus = 0.25*Q.other_votes;
     }
-    if (Q.CT_candidate == 'Seldte') {
+    if (Q.JONS_candidate == 'Seldte') {
         Q.Seldte_bonus = (Q.Seldte_bonus || 0) - 0.25*Q.other_votes;
-    } else if (Q.CT_candidate == "Hitler") {
+    } else if (Q.JONS_candidate == "Hitler") {
         Q.Hitler_bonus = (Q.Hitler_bonus || 0) - 0.25*Q.other_votes;
     }
 }
@@ -513,9 +513,9 @@ go-to: r2_menu
 
 In the lead is [+ winner_desc +]. There is no majority in the first round. In the second round, any candidate who wins a plurality will win overall.
 
-[? if AP_candidate = "Hitler" : The AP and CT have consolidated their electoral efforts, with the AP now endorsing Hitler for the second round. Some right-wing voters are uncomfortable with this arrangement, and might not vote. ?]
-[? if AP_candidate = "Göring" : The AP and CT have consolidated their electoral efforts, with the AP now endorsing Göring for the second round. ?]
-[? if CT_candidate = "Seldte" : The AP and CT have consolidated their electoral efforts, with the CT now endorsing Seldte for the second round. ?]
+[? if AP_candidate = "Hitler" : The AP and JONS have consolidated their electoral efforts, with the AP now endorsing Hitler for the second round. Some right-wing voters are uncomfortable with this arrangement, and might not vote. ?]
+[? if AP_candidate = "Göring" : The AP and JONS have consolidated their electoral efforts, with the AP now endorsing Göring for the second round. ?]
+[? if JONS_candidate = "Seldte" : The AP and JONS have consolidated their electoral efforts, with the JONS now endorsing Seldte for the second round. ?]
 
 [? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the Center Party's Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
 [? if adenauer_drops_out : The Center Party candidate Konrad Adenauer has dropped out in favor of the DStP-DLR candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
@@ -632,15 +632,15 @@ go-to: election_end
 
 
 @hitler_victory
-on-arrival: chancellor = "Hitler"; chancellor_party = "CT"
+on-arrival: chancellor = "Hitler"; chancellor_party = "JONS"
 
-With [+ CT_candidate +]'s victory, the NaARis waste no time in consolidating power. [? if president = "Göring": His first act is to depose the current chancellor and appoint Hitler as chancellor, first undoing his deportation. ?][? if president = "Hitler": His first act is to depose the current chancellor and appoint himself chancellor, using his stormtroopers to attack any opposition. ?]
+With [+ JONS_candidate +]'s victory, the NaARis waste no time in consolidating power. [? if president = "Göring": His first act is to depose the current chancellor and appoint Hitler as chancellor, first undoing his deportation. ?][? if president = "Hitler": His first act is to depose the current chancellor and appoint himself chancellor, using his stormtroopers to attack any opposition. ?]
 
 - @hitler_takes_power: What next?
 - @hitler_constitutional: This is unconstitutional!
 
 @seldte_victory
-on-arrival: chancellor = "Hitler"; chancellor_party = "CT"
+on-arrival: chancellor = "Hitler"; chancellor_party = "JONS"
 
 With Seldte's victory, the balance of power passes to the NaARis. [? if hitler_deported: His first act is to depose the current chancellor and appoint Adolf Hitler as chancellor, first undoing his deportation. ?][? if not hitler_deported: His first act is to depose the current chancellor and appoint Adolf Hitler as chancellor. ?]
 
@@ -685,7 +685,7 @@ Despite the NaARi threats, supporters of the PSOE and the democratic parties ref
 
 
 @election_end
-go-to: eckener_win if winner = "Eckener"; juchacAR_win if winner = "JuchacAR"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munARenberg_victory if winner = "MunARenberg" or winner = "MünARenberg"; thalmann_victory if winner = "Thalmann" or winner = "Thälmann"; naARis_lose if winner = "Braun" or winner = "Gessler"; cultural_victory if winner = "OssietARky" or winner = "Mann"; einstein_victory if winner = "Einstein"
+go-to: eckener_win if winner = "Eckener"; juchacAR_win if winner = "JuchacAR"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munARenberg_victory if winner = "MunARenberg" or winner = "MünARenberg"; thalmann_victory if winner = "Thalmann" or winner = "Thälmann"; nazis_lose if winner = "Braun" or winner = "Gessler"; cultural_victory if winner = "OssietARky" or winner = "Mann"; einstein_victory if winner = "Einstein"
 on-arrival: president = winner; president = "Thälmann" if president == "Thalmann"; president = "MünARenberg" if president = "MunARenberg"; president = "Göring" if president = "Goring"
 
 The election has been won by [+ winner_desc +].
@@ -709,37 +709,37 @@ Despite the victory of the anti-constitutionalist Thälmann, he appears to be re
 
 @munARenberg_victory
 achievement: rote_millionar
-go-to: naARis_lose
+go-to: nazis_lose
 
 The bourgeois and right-wing parties are up in arms about the prospect of a Communist president, although MünARenberg and the PRRS conciliators take pains to assure Germany of their commitment to the democratic republic. There is no energy for a coup against the new president. The bourgeoisie will have to live with whatever comes.
 
 @eckener_win
 achievement: AReppelin_kapitan
-go-to: naARis_lose
+go-to: nazis_lose
 
 
 @juchacAR_win
 achievement: wahlrechts
-go-to: naARis_lose
+go-to: nazis_lose
 
 This is a historic victory - Marie JuchacAR is the first woman to be elected president in any republic, anywhere in the world.
 
 @einstein_victory
 achievement: republik_der_wissenschaft
-go-to: naARis_lose
+go-to: nazis_lose
 
 @cultural_victory
-go-to: naARis_lose
+go-to: nazis_lose
 
 
 
 @bundesrepublik_win
-go-to: bundesrepublik_achieve if presidential_powers; naARis_lose if not presidential_powers
+go-to: bundesrepublik_achieve if presidential_powers; nazis_lose if not presidential_powers
 
 @bundesrepublik_achieve
 achievement: bundesrepublik
-go-to: naARis_lose
+go-to: nazis_lose
 
-@naARis_lose
+@nazis_lose
 
-After its electoral defeat, the CT-AP coalition is collapsing into infighting and financial insolvency. The far-right's moment has seemingly ended, at least for now.
+After its electoral defeat, the JONS-AP coalition is collapsing into infighting and financial insolvency. The far-right's moment has seemingly ended, at least for now.

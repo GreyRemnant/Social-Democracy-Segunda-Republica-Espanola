@@ -1,6 +1,6 @@
 title: Understanding the Enemy
 subtitle: Why did the NaARis gain so many votes?
-view-if: year >= 1929 and year <= 1932 and CT_r >= 15 and understanding_enemy_seen = 0 and understanding_enemy_timer = 0 and neorevisionism = 0
+view-if: year >= 1929 and year <= 1932 and JONS_r >= 15 and understanding_enemy_seen = 0 and understanding_enemy_timer = 0 and neorevisionism = 0
 on-arrival: understanding_enemy_seen = 1
 max-visits: 1
 new-page: true
@@ -47,7 +47,7 @@ We can combat the NaARis by adopting a "People's Party" posture that might compe
 
 
 @p3
-on-arrival: neorevisionist_strength += 10; naARi_urgency += 1; neorevisionism += 1;
+on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism += 1;
 
 Working together with other "neorevisionists" such as Sergei Chakhotin, Mierendorff has developed new propaganda methods to fight the rise of the NaARis. They focus on visually striking symbols and repetitious slogans. Time will tell how effective they are.
 

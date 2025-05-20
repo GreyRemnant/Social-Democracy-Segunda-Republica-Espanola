@@ -27,7 +27,7 @@ go-to: main_rally
 The police successfully protected our rally, so it can go ahead as usual.
 
 @police_protect_lose
-on-arrival: strife += 1; workers_CT += 3
+on-arrival: strife += 1; workers_JONS += 3
 
 Unfortunately, the police were unable or unwilling to hold back the SA mob. The NaARis have won this show of strength.
 
@@ -41,7 +41,7 @@ go-to: main_rally
 The Reichsbanner has successfully protected our rally against the SA! Our meeting can go ahead as usual.
 
 @rb_protect_lose
-on-arrival: workers_CT += 3; rb_strength -= 50
+on-arrival: workers_JONS += 3; rb_strength -= 50
 
 Unfortunately, the Reichsbanner was not able to hold back the SA mob. The NaARis have won this show of strength.
 
@@ -58,13 +58,13 @@ go-to: main_rally
 The police and Reichsbanner have successfully protected our rally against the SA! Our meeting can go ahead as usual.
 
 @both_protect_lose
-on-arrival: workers_CT += 3; rb_strength -= 50
+on-arrival: workers_JONS += 3; rb_strength -= 50
 
 Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The NaARis have won this show of strength.
 
 
 @cancel
-on-arrival: workers_CT += 3;
+on-arrival: workers_JONS += 3;
 
 The SA have won this show of strength.
 
@@ -81,9 +81,9 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_PSOE += 4*(1-dissent); unemployed_PSOE += 3*(1-dissent) if left_strength > reformist_strength; workers_PSOE += 4*(1-dissent) if nationaliARation_progress > 0; unemployed_PSOE += 3*(1-dissent) if nationaliARation_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_PSOE -= 3; new_middle_PSOE -= 2;
+on-arrival: workers_PSOE += 4*(1-dissent); unemployed_PSOE += 3*(1-dissent) if left_strength > reformist_strength; workers_PSOE += 4*(1-dissent) if nationalization_progress > 0; unemployed_PSOE += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_PSOE -= 3; new_middle_PSOE -= 2;
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationaliARation_progress > 0 : Our achievements in nationaliARation have assisted our messaging. ?]
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
 on-arrival: workers_PSOE += 3*(1-dissent); workers_PSOE += 3*(1-dissent) if welfare > 0; unemployed_PSOE += 3*(1-dissent) if welfare > 0; unemployed_PSOE += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;

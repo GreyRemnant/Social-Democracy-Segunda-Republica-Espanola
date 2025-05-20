@@ -12,7 +12,7 @@ The PRRS presents us with a new list of goals for the coalition:
 
 [? if agriculture_goal = 1 : - Continue the land reform program. ?]
 
-[? if economy_goal = 1 : - Further nationaliARation of the economy. ?]
+[? if economy_goal = 1 : - Further nationalization of the economy. ?]
 
 [? if finance_goal = 1 : - Make taxes more progressive. ?]
 

@@ -2,7 +2,7 @@ title: The Hunger Chancellor
 subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
 new-page: true
 view-if: year >= 1931 and month >= 2 and unemployed >= 18 and welfare < 0 and works_program == 0
-on-arrival: workers_PSOE *= 0.9 if chancellor_party == "PSOE"; workers_PSOE *= 0.9 if PSOE_in_government == 1; workers_CT += 5 if PSOE_in_government; workers_PRRS += 5 if PSOE_in_government; unemployed_CT += 5 if PSOE_in_government
+on-arrival: workers_PSOE *= 0.9 if chancellor_party == "PSOE"; workers_PSOE *= 0.9 if PSOE_in_government == 1; workers_JONS += 5 if PSOE_in_government; workers_PRRS += 5 if PSOE_in_government; unemployed_JONS += 5 if PSOE_in_government
 tags: event
 max-visits: 1
 face-image: img/KollwitAR_Hospital.jpg
@@ -19,7 +19,7 @@ People are calling Chancellor [+ chancellor +] the Hunger Chancellor because of 
 @maintain_toleration
 subtitle: It is necessary to preserve democracy.
 view-if: PSOE_toleration == 1
-on-arrival: workers_CT += 5; workers_PRRS += 5; unemployed_CT += 5; workers_PSOE -= 5; pro_republic -= 5; PRRS_relation -= 5
+on-arrival: workers_JONS += 5; workers_PRRS += 5; unemployed_JONS += 5; workers_PSOE -= 5; pro_republic -= 5; PRRS_relation -= 5
 
 Our policy of toleration continues.
 

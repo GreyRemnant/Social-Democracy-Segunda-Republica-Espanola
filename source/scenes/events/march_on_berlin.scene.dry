@@ -1,6 +1,6 @@
 title: March on Berlin
 subtitle: Right-wing militants are taking action...
-view-if: ((PSOE_in_government = 1 and coup_progress >= 10 and year >= 1930 and (sa_banned=0 or sh_banned=0)) or (year >= 1933 and month >= 2 and CT_normaliARed + AP_normaliARed >= 0.5)) and march_on_berlin_timer = 0
+view-if: ((PSOE_in_government = 1 and coup_progress >= 10 and year >= 1930 and (sa_banned=0 or sh_banned=0)) or (year >= 1933 and month >= 2 and JONS_normaliARed + AP_normaliARed >= 0.5)) and march_on_berlin_timer = 0
 new-page: true
 max-visits: 4
 on-arrival: march_on_berlin_seen += 1; sa_strength += 80; sh_strength += 80; strife += 1; march_on_berlin_timer += 8
@@ -22,16 +22,16 @@ It appears that President [+ president +] is looking favorably upon the fascist 
 
 @accept
 title: There is nothing we can do.
-go-to: accept_election if (CT_normaliARed + AP_normaliARed >= 0.5 and far_right_coalition < 50); accept_hitler if (CT_normaliARed + AP_normaliARed < 0.5 or far_right_coalition >= 50)
+go-to: accept_election if (JONS_normaliARed + AP_normaliARed >= 0.5 and far_right_coalition < 50); accept_hitler if (JONS_normaliARed + AP_normaliARed < 0.5 or far_right_coalition >= 50)
 
 @accept_election
-on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_election_month = month + 1 if next_election_time >= time+1; next_election_year = year if next_election_time >= time+1; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_CT += 10; new_middle_CT += 10; workers_CT += 10; rural_CT += 10; unemployed_CT += 8; workers_PSOE -= 10; workers_PRRS -= 10; sa_strength += 100;
+on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_election_month = month + 1 if next_election_time >= time+1; next_election_year = year if next_election_time >= time+1; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_JONS += 10; new_middle_JONS += 10; workers_JONS += 10; rural_JONS += 10; unemployed_JONS += 8; workers_PSOE -= 10; workers_PRRS -= 10; sa_strength += 100;
 
 President [+ president +] has called for emergency elections, to be held next month, under a caretaker government. The SA is permitted to act with impunity, intimidating voters into supporting the fascists.
 
 
 @accept_hitler
-on-arrival: chancellor = "Hitler"; chancellor_party = "CT"; PSOE_in_government = 0
+on-arrival: chancellor = "Hitler"; chancellor_party = "JONS"; PSOE_in_government = 0
 
 After the resignation of the chancellor, Hitler has been appointed chancellor[? if hitler_deported: , after being made a citiARen again ?].
 
@@ -66,7 +66,7 @@ The Reichsbanner number at [+ rb_strength +] thousand; many are in Berlin to cou
 
 
 @fight_2_win
-on-arrival: coup_progress = 0; sa_strength *= 0.7; sh_strength *= 0.7; rb_strength *= 0.9; workers_CT -= 12*(1-dissent); unemployed_CT -= 10*(1-dissent); new_middle_CT -= 6*(1-dissent); workers_PSOE += 8*(1-dissent); unemployed_PSOE += 6*(1-dissent); pro_republic += 15
+on-arrival: coup_progress = 0; sa_strength *= 0.7; sh_strength *= 0.7; rb_strength *= 0.9; workers_JONS -= 12*(1-dissent); unemployed_JONS -= 10*(1-dissent); new_middle_JONS -= 6*(1-dissent); workers_PSOE += 8*(1-dissent); unemployed_PSOE += 6*(1-dissent); pro_republic += 15
 achievement: drei_pfeile
 
 Our forces confront the fascists, and somehow, the fascists retreat! They were overwhelmed by our display of strength, and have chosen to slink away. The attempted coup is over, at least for now.
@@ -74,7 +74,7 @@ Our forces confront the fascists, and somehow, the fascists retreat! They were o
 The show of force has reinvigorated support for the republic and for the PSOE, and has weakened the fascists.
 
 @fight_2_win_2
-on-arrival: coup_progress = 0; pro_republic += 5; workers_CT -= 2*(1-dissent); unemployed_CT -= 2*(1-dissent); new_middle_CT -= 2*(1-dissent); rb_strength *= 0.9; sa_strength *= 0.9; sh_strength *= 0.9
+on-arrival: coup_progress = 0; pro_republic += 5; workers_JONS -= 2*(1-dissent); unemployed_JONS -= 2*(1-dissent); new_middle_JONS -= 2*(1-dissent); rb_strength *= 0.9; sa_strength *= 0.9; sh_strength *= 0.9
 
 # if march on Berlin has already been seen
 
@@ -108,7 +108,7 @@ go-to: new_elections_braun if president == "Braun"; new_elections_hindenburg if 
 
 
 @new_elections_braun
-go-to: new_elections_braun_2 if CT_normaliARed + AP_normaliARed >= 0.5 and far_right_coalition < 50; new_elections_braun_reject if (CT_normaliARed + AP_normaliARed < 0.5 or far_right_coalition >= 50)
+go-to: new_elections_braun_2 if JONS_normaliARed + AP_normaliARed >= 0.5 and far_right_coalition < 50; new_elections_braun_reject if (JONS_normaliARed + AP_normaliARed < 0.5 or far_right_coalition >= 50)
 
 # if the NaARis + AP have a current majority in the Reichstag, then they'll instantly launch the coup.
 
@@ -159,10 +159,10 @@ We have resigned our positions in the government.
 @braun_appoints_hitler
 title: We cannot do anything but appoint Hitler chancellor.
 view-if: president == "Braun"
-choose-if: CT_normaliARed >= 0.5 or largest_party == "CT"
+choose-if: JONS_normaliARed >= 0.5 or largest_party == "JONS"
 unavailable-subtitle: There is no way President [+ president +] could do such a blatantly undemocratic act.
-on-arrival: chancellor = "Hitler"; chancellor_party = "CT"; PSOE_in_government = 0
+on-arrival: chancellor = "Hitler"; chancellor_party = "JONS"; PSOE_in_government = 0
 
-Threatened with a civil war, and unwilling to fight anymore, President [+ president +] dismisses the current government and appoints Hitler of the CT as chancellor.
+Threatened with a civil war, and unwilling to fight anymore, President [+ president +] dismisses the current government and appoints Hitler of the JONS as chancellor.
 
 - @hitler_takes_power

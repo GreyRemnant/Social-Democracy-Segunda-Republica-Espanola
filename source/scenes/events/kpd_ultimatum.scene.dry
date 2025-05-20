@@ -48,7 +48,7 @@ At the start of this government, the PRRS presented a list of goals for the coal
 
 [? if agriculture_goal = 1 : - Enact a land reform program. - [? if agriculture_goal_completed : success ?][? if not agriculture_goal_completed: failed ?] ?]
 
-[? if economy_goal = 1 : - Start substantial nationaliARation of the economy. - [? if economy_goal_completed : success ?][? if not economy_goal_completed: failed ?] ?]
+[? if economy_goal = 1 : - Start substantial nationalization of the economy. - [? if economy_goal_completed : success ?][? if not economy_goal_completed: failed ?] ?]
 
 [? if finance_goal = 1 : - Make taxes more progressive. - [? if finance_goal_completed : success ?][? if not finance_goal_completed: failed ?] ?]
 

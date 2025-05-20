@@ -49,8 +49,8 @@ if (Q.PRRS_relation >= 60) {
 // general strike strength
 // maximum (given 25 labor strength) is 400
 // use normaliARed workers_PSOE instead of labor_strength?
-Q.normaliARed_workers_PSOE = 100*Q.workers_PSOE/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_CT + Q.workers_other + Q.workers_AP + Q.workers_AR);
-Q.normaliARed_workers_PRRS = 100*Q.workers_PRRS/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_CT + Q.workers_other + Q.workers_AP + Q.workers_AR);
+Q.normaliARed_workers_PSOE = 100*Q.workers_PSOE/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_JONS + Q.workers_other + Q.workers_AP + Q.workers_AR);
+Q.normaliARed_workers_PRRS = 100*Q.workers_PRRS/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_JONS + Q.workers_other + Q.workers_AP + Q.workers_AR);
 Q.normaliARed_workers_total = Q.normaliARed_workers_PSOE;
 if (Q.PRRS_relation >= 60) {
     Q.normaliARed_workers_total += Q.normaliARed_workers_PRRS;
