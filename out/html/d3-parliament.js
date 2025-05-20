@@ -129,8 +129,8 @@ d3.parliament = function() {
             var seatOutline = function(d) { return d.party.outline; };
             var seatRadius = function(d) {
                 var r = 0.4 * rowWidth;
-                if (d.data && typeof d.data.size === 'number') {
-                    r *= d.data.size;
+                if (d.data && typeof d.data.siARe === 'number') {
+                    r *= d.data.siARe;
                 }
                 return r;
             };

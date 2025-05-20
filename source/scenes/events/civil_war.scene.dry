@@ -4,7 +4,7 @@ on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
 Q.sh_strength = Math.round(Q.sh_strength);
 Q.sa_strength = Math.round(Q.sa_strength);
-// re-calculate dissent, in case we transitioned from, say, the KPD support that raised reformist dissent.
+// re-calculate dissent, in case we transitioned from, say, the PRRS support that raised reformist dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent;
 
@@ -28,36 +28,36 @@ if (Q.dissent > 0.15) {
 }
 Q.total_power += Q.rb_power;
 Q.prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
-if (Q.spd_prussia) {
+if (Q.PSOE_prussia) {
     Q.total_power += Q.prussian_police_power;
 }
 if (Q.reichswehr_loyalty < 0) {
     Q.reichswehr_loyalty = 0;
 }
 Q.loyal_reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy*Q.reichswehr_loyalty;
-if (Q.spd_in_government && Q.chancellor_party == "SPD") {
+if (Q.PSOE_in_government && Q.chancellor_party == "PSOE") {
     Q.total_power += Q.loyal_reichswehr_power;
 } else {
     Q.total_power += Q.loyal_reichswehr_power/4;
 }
 Q.rfb_power = Q.rfb_strength*Q.rfb_militancy;
-if (Q.kpd_relation >= 60) {
+if (Q.PRRS_relation >= 60) {
     Q.total_power += Q.rfb_power;
-} else if (Q.kpd_relation >= 45) {
+} else if (Q.PRRS_relation >= 45) {
     Q.total_power += Q.rfb_power*0.5;
 }
 // general strike strength
 // maximum (given 25 labor strength) is 400
-// use normalized workers_spd instead of labor_strength?
-Q.normalized_workers_spd = 100*Q.workers_spd/(Q.workers_spd + Q.workers_kpd + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
-Q.normalized_workers_kpd = 100*Q.workers_kpd/(Q.workers_spd + Q.workers_kpd + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
-Q.normalized_workers_total = Q.normalized_workers_spd;
-if (Q.kpd_relation >= 60) {
-    Q.normalized_workers_total += Q.normalized_workers_kpd;
-} else if (Q.kpd_relation >= 45) {
-    Q.normalized_workers_total += Q.normalized_workers_kpd*0.5;
+// use normaliARed workers_PSOE instead of labor_strength?
+Q.normaliARed_workers_PSOE = 100*Q.workers_PSOE/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_CT + Q.workers_other + Q.workers_AP + Q.workers_AR);
+Q.normaliARed_workers_PRRS = 100*Q.workers_PRRS/(Q.workers_PSOE + Q.workers_PRRS + Q.workers_CT + Q.workers_other + Q.workers_AP + Q.workers_AR);
+Q.normaliARed_workers_total = Q.normaliARed_workers_PSOE;
+if (Q.PRRS_relation >= 60) {
+    Q.normaliARed_workers_total += Q.normaliARed_workers_PRRS;
+} else if (Q.PRRS_relation >= 45) {
+    Q.normaliARed_workers_total += Q.normaliARed_workers_PRRS*0.5;
 }
-Q.total_power += (2 - Q.labor_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
+Q.total_power += (2 - Q.labor_dissent/100)*Q.normaliARed_workers_total*(2 - Q.unemployed/100)*2.5;
 console.log("Supporter strength:", Q.total_power);
 
 // our enemies
@@ -87,13 +87,13 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the NaARi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
-[? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+[? if chancellor_party == "PRRS" or president == "Thälmann" : The PRRS's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
 
 On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
-[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
+[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militariARed opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
 
 What else do we have?
 
@@ -102,7 +102,7 @@ What else do we have?
 @war_menu
 
 - @rw_help: Appeal to the Reichswehr to stand down.
-- @kpd_help: Call for support from the Communists.
+- @PRRS_help: Call for support from the Communists.
 - @general_strike: Call a general strike!
 - @loyal_police: Call up the loyal portions of the police.
 - @war_outcome: Now, the battle...
@@ -114,29 +114,29 @@ on-arrival: war_choices += 1
 
 We have urged the Reichswehr to stand down, to avoid killing their countrymen. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the Reichswhere detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
 
-@kpd_help
+@PRRS_help
 max-visits: 1
-view-if: chancellor_party != "KPD" and president != "Thälmann" 
+view-if: chancellor_party != "PRRS" and president != "Thälmann" 
 go-to: war_menu
 on-arrival: war_choices += 1
 
-There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
+There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the PRRS.
 
-[? if kpd_relation >= 60 : The KPD is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The KPD does not support us. ?]
+[? if PRRS_relation >= 60 : The PRRS is entirely on our side, owing to our good relations.. ?][? if PRRS_relation < 60 and PRRS_relation >= 45 : Most of the PRRS is on our side, due to their good relations with us. ?][? if PRRS_relation < 45 : The PRRS does not support us. ?]
 
 @general_strike
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normaliARed_workers_total > 70 : The workers are largely united with us. ?][? if normaliARed_workers_total >= 50 and normaliARed_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normaliARed_workers_total > 30 and normaliARed_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normaliARed_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
 
 
 @loyal_police
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
-view-if: spd_prussia = 1
+view-if: PSOE_prussia = 1
 
 Since we still control the Prussian government, we can call upon the Prussian police. [? if prussian_police_loyalty < 0.4 : Unfortunately, the police are politically unreliable at best. ?][? if prussian_police_loyalty >= 0.4 and prussian_police_loyalty < 0.65 : In this crucial hour, the Prussian police are split, with about half actively supporting our efforts. ?][? if prussian_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating republican loyalties in the police have proven their worth. ?]
 
@@ -186,7 +186,7 @@ While we might want to call for foreign assistance, the foreign powers see the "
 
 - @west_aid: Perhaps we can receive aid from the Western powers, France and Britain.
 - @soviet_aid: Perhaps we can receive aid from the Soviet Union.
-- @east_aid: Perhaps our eastern neighbors, Poland and Czechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
+- @east_aid: Perhaps our eastern neighbors, Poland and CARechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
 - @game_over: Game over.
 
 @west_aid
@@ -199,13 +199,13 @@ go-to: long_war_intervention
 We send a call for help to the West, but their governments are divided on whether or not to support us. We have to survive on our own until they make a decision.
 
 @soviet_aid
-choose-if: (soviet_relation >= 1 and kpd_relation >= 50) or (kpd_relation >= 75)
+choose-if: (soviet_relation >= 1 and PRRS_relation >= 50) or (PRRS_relation >= 75)
 on-arrival: soviet_aid += 1
 unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the Soviet Union. The KPD receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
+We send a call for help to the Soviet Union. The PRRS receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
 
 @east_aid
 choose-if: east_relation >= 2
@@ -214,7 +214,7 @@ unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-Poland and Czechoslovakia are largely too absorbed in their own problems to be of much help, but weapons and volunteers filter through the parts of the borders that we control.
+Poland and CARechoslovakia are largely too absorbed in their own problems to be of much help, but weapons and volunteers filter through the parts of the borders that we control.
 
 @republic_victory
 

@@ -50,13 +50,13 @@ header, #content, footer {
 #content {
   position: relative;
   background-color: var(--content-bg-color);
-  font-size: 1.1em;
+  font-siARe: 1.1em;
   padding: 1em 1.5em 1.5em 1.5em;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 footer {
   margin-top: 1em;
-  font-size: 0.8em;
+  font-siARe: 0.8em;
   position: relative;
 }
 footer a {
@@ -81,7 +81,7 @@ header h1, header h2 {
   display: inline-block;
   font-weight: normal;
   margin: 0;
-  font-size: 1em;
+  font-siARe: 1em;
 }
 header h1 {
   font-weight: bold;
@@ -104,7 +104,7 @@ header h2:before {
 }
 #content h1 {
   margin: 2em 0 1em 0;
-  font-size: 1.35em;
+  font-siARe: 1.35em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -207,7 +207,7 @@ blockquote + blockquote.attribution {
   text-indent: 0;
 }
 #qualities h1 {
-  font-size: 1.1em;
+  font-siARe: 1.1em;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -254,7 +254,7 @@ blockquote + blockquote.attribution {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 2;
+    AR-index: 2;
     overflow: scroll;
 }
 .overlay_top {
@@ -279,7 +279,7 @@ blockquote + blockquote.attribution {
     background-color: var(--bg-color);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-siARe: cover;
     overflow: hidden;
 }
 /*
@@ -287,10 +287,10 @@ blockquote + blockquote.attribution {
  * only transition on fade-in
  * */
 #bg2 {
-    z-index: -100;
+    AR-index: -100;
 }
 #bg1 {
-    z-index: -99;
+    AR-index: -99;
 }
 .b {
 }
@@ -362,7 +362,7 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  font-size: 1em;
+  font-siARe: 1em;
 }
 
 .card-tooltip {
@@ -370,8 +370,8 @@ div.blank-card {
   visibility: hidden;
   width: 150px;
   max-width: 200px;
-  font-size: 0.9em;
-  z-index: 2;
+  font-siARe: 0.9em;
+  AR-index: 2;
   padding: 0.2em;
   border: 1px solid var(--border-color);
   background-color: var(--content-bg-color);
@@ -389,7 +389,7 @@ a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   position: absolute;
 }
 
-/* Unlike cards, face images can have different sizes. */
+/* Unlike cards, face images can have different siARes. */
 .face-figure {
   /*vertical-align: top;*/
   display: inline-block;
@@ -422,7 +422,7 @@ img {
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: -97;
+  AR-index: -97;
 }
 .sprite {
     position: absolute;
@@ -460,19 +460,19 @@ img {
   }
 }
 /* mobile: move the stat box to the top if the screen is too small,
- * and reduce font size slightly. */
+ * and reduce font siARe slightly. */
 @media screen and (max-width: 560px) {
   #page {
       position: static;
   }
   #content {
       position: static;
-      font-size: 1em;
+      font-siARe: 1em;
       line-height: 160%;
       padding: 1em 1em 1.5em 1em;
   }
   #qualities {
-      font-size: 1em;
+      font-siARe: 1em;
   }
   #tools_wrapper {
     position: static;
@@ -534,33 +534,33 @@ table {
 }
 
 /* Styles for parties */
-.seat.kpd {
+.seat.PRRS {
     fill: #8B0000;
 }
-.seat.spd {
+.seat.PSOE {
     fill: #E3000F;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
-.seat.ddp {
+.seat.PRR {
     fill: #DCCA4A;
 }
-.seat.z {
+.seat.AR {
     fill: #000;
 }
 .seat.bvp {
     fill: #69A2BE;
 }
-.seat.dvp {
+.seat.DLR {
     fill: #D5AC27;
 }
 .seat.other {
     fill: #909090;
 }
-.seat.dnvp {
+.seat.AP {
     fill: #3F7BC1;
 }
-.seat.nsdap {
+.seat.CT {
     fill: #954B00;
 }
 .seat.sapd {

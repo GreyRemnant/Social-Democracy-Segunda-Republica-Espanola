@@ -91,14 +91,14 @@ go-to: rm_main
 
 Braun has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_juchacz
-title: Remove Juchacz
-view-if: juchacz_advisor = 1
+@remove_juchacAR
+title: Remove JuchacAR
+view-if: juchacAR_advisor = 1
 tags: remove_advisor
-on-arrival: juchacz_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: juchacAR_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+JuchacAR has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_pfulf
 title: Remove Pfülf
@@ -178,14 +178,14 @@ go-to: rm_main
 
 Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_seydewitz
-title: Remove Seydewitz
-view-if: seydewitz_advisor = 1
+@remove_seydewitAR
+title: Remove SeydewitAR
+view-if: seydewitAR_advisor = 1
 tags: remove_advisor
-on-arrival: seydewitz_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: seydewitAR_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
+SeydewitAR has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_siemsen
 title: Remove Siemsen
@@ -343,7 +343,7 @@ Rudolf Hilferding is now an advisor.
 
 @add_wels
 title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
+subtitle: Otto Wels is a long-time party organiARer and member of the leadership, serving under Friedrich Ebert. {!<br><br>!}[? if difficulty < 0 : Actions -  Clear the Agenda, Party Discipline, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
@@ -394,7 +394,7 @@ Carl Severing is now an advisor.
 
 @add_braun
 title: Otto Braun
-subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recogniARable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
@@ -404,17 +404,17 @@ go-to: advisor_menu
 
 Otto Braun is now an advisor.
 
-@add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+@add_juchacAR
+title: Marie JuchacAR
+subtitle: Marie JuchacAR is the founder of Worker's Welfare, a mutual-aid organiARation. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, OrganiARing Women ?]
 is-card: true
-card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5
+card-image: img/portraits/JuchacARMarie.jpg
+view-if: juchacAR_advisor = 0 and n_advisors < 3
+on-arrival: juchacAR_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+Marie JuchacAR is now an advisor.
 
 @add_pfulf
 title: Antonie Pfülf
@@ -434,7 +434,7 @@ Antonie Pfülf is now an advisor.
 
 @add_levi
 title: Paul Levi
-subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD ?]
+subtitle: Paul Levi is a former PRRS leader who was purged for criticiARing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PRRS ?]
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
 view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
@@ -446,7 +446,7 @@ Paul Levi is now an advisor.
 
 @add_sender
 title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, OrganiARing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
@@ -458,7 +458,7 @@ Toni Sender is now an advisor.
 
 @add_rosenfeld
 title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD, Against Toleration ?]
+subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PRRS, Against Toleration ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
 view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -468,17 +468,17 @@ tags: left_advisor
 
 Kurt Rosenfeld is now an advisor.
 
-@add_seydewitz
-title: Max Seydewitz
-subtitle: Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the SPD, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
+@add_seydewitAR
+title: Max SeydewitAR
+subtitle: Max SeydewitAR is a former leader of the youth wing, current supporter of the left wing of the PSOE, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
-card-image: img/portraits/SeydewitzMax.jpg
-view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/SeydewitARMax.jpg
+view-if: seydewitAR_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: seydewitAR_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Max Seydewitz is now an advisor.
+Max SeydewitAR is now an advisor.
 
 @add_siemsen
 title: Anna Siemsen
@@ -498,7 +498,7 @@ Anna Siemsen is now an advisor.
 
 @add_leipart
 title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - OrganiARing Workers, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
@@ -510,7 +510,7 @@ Theodor Leipart is now an advisor.
 
 @add_aufhauser
 title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - OrganiARing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
@@ -550,7 +550,7 @@ Wladimir Woytinsky is now an advisor.
 
 @add_mierendorff
 title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the Nazis ?]
+subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-NaARi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the NaARis ?]
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
@@ -587,16 +587,16 @@ Julius Leber is now an advisor.
 # Nonfactional advisors
 
 @add_baade
-title: Fritz Baade
-subtitle: Fritz Baade is one of the few agricultural policy experts in the SPD. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
+title: FritAR Baade
+subtitle: FritAR Baade is one of the few agricultural policy experts in the PSOE. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/BaadeFritz.jpg
+card-image: img/portraits/BaadeFritAR.jpg
 view-if: baade_advisor = 0 and n_advisors < 3
 on-arrival: baade_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Fritz Baade is now an advisor.
+FritAR Baade is now an advisor.
 
 
 @add_hirschfeld
@@ -615,7 +615,7 @@ Magnus Hirschfeld is now an advisor.
 
 @add_radbruch
 title: Gustav Radbruch
-subtitle: Gustav Radbruch is a renowned legal scholar and long-time SPD justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+subtitle: Gustav Radbruch is a renowned legal scholar and long-time PSOE justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
 card-image: img/portraits/RadbruchGustav.jpg
 view-if: radbruch_advisor = 0 and n_advisors < 3
@@ -628,7 +628,7 @@ Gustav Radbruch is now an advisor.
 
 @add_stampfer
 title: Friedrich Stampfer
-subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the KPD ?]
+subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the PRRS ?]
 is-card: true
 card-image: img/portraits/StampferFriedrich.jpg
 view-if: stampfer_advisor = 0 and n_advisors < 3

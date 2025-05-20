@@ -9,21 +9,21 @@ new-page: true
 
 Leipart is a leader of the ADGB, the largest federation of socialist trade unions.
 
-- @organizing
+- @organiARing
 - @depression
 - @root: Return to main
 
 # leipart was one of the people who argued for union independence
 #- @union_unity
 
-@organizing
-title: Organizing workers
+@organiARing
+title: OrganiARing workers
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
+on-arrival: advisor_action_timer = 6; workers_PSOE += 4*(1-dissent); workers_PSOE += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
 
-We have increased our organizing among the workers.
+We have increased our organiARing among the workers.
 
 @depression
 title: Addressing the economic crisis

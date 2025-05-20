@@ -10,56 +10,56 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The PSOE cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the PSOE, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @PRRS: Work towards repairing relationships with the Communist Party.
+- @PSOE_alone: The PSOE can stand alone for now.
 - @easy_discard
 
 
-@kpd
+@PRRS
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectifed_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectifed_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+on-arrival: resources -= 1; PRRS_inter_party_seen += 1
+go-to: PRRS_blutmai if blutmai = 1; PRRS_1 if blutmai = 0 and PRRS_coalition_success = 0 and (PRRS_relation < 40 or PRRS_rectifed_history = 1); PRRS_rectification_of_history if PRRS_relation >= 40 and PRRS_rectifed_history = 0; PRRS_2 if PRRS_coalition_success = 1 and PRRS_rectified_history = 1
 
-@kpd_1
-on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
+@PRRS_1
+on-arrival: PRRS_relation += 6*(1 - dissent); communist_coalition += 1 if PRRS_inter_party_seen <= 1; reformist_dissent += 2; AR_relation -= 2; DLR_relation -= 3
 
 The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
 
-@kpd_rectification_of_history
+@PRRS_rectification_of_history
 
-One stumbling block for our relations with the KPD is our history of conflict, dating back to 1918 and 1919. The KPD is especially contemptuous of Gustav Noske, the SPD "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other KPD revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the PRRS is our history of conflict, dating back to 1918 and 1919. The PRRS is especially contemptuous of Gustav Noske, the PSOE "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other PRRS revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two PSOE-turned-PRRS leaders who were killed during the suppression of the uprising.
 
-For further improvements in KPD relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
+For further improvements in PRRS relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
-- @yes_history: Yes, we must apologize for our past actions.
-- @no_history: No, we have no need to apologize.
+- @yes_history: Yes, we must apologiARe for our past actions.
+- @no_history: No, we have no need to apologiARe.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; PRRS_rectified_history = 1; AR_relation -= 6; DLR_relation -= 6; PRR_relation -= 4; PRRS_relation += 8*(1-dissent); coalition_dissent += 1
 
-As part of normalizing relations with the KPD, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
+As part of normaliARing relations with the PRRS, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
 This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: kpd_relation -= 3
+on-arrival: PRRS_relation -= 3
 
-We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
+We have no need to apologiARe for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
 
 
-@kpd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
+@PRRS_2
+on-arrival: PRRS_relation += 8*(1 - dissent); communist_coalition += 1 if PRRS_inter_party_seen <= 1; reformist_dissent += 2; AR_relation -= 3; DLR_relation -= 3
 
-After the success of the coalition government with the KPD, they are much more amenable to us.
+After the success of the coalition government with the PRRS, they are much more amenable to us.
 
-@kpd_blutmai
-on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
+@PRRS_blutmai
+on-arrival: PRRS_relation += 3*(1 - dissent); reformist_dissent += 1
 
 After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 
@@ -67,21 +67,21 @@ After the events of Blütmai, reconciling with the Communists is difficult, if n
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+on-arrival: resources -= 1; AR_relation += 2 if AR_party_leader == "Joos"
+go-to: center_op if AR_in_government = 1 and PSOE_in_government = 0 and chancellor != "Brüning"; center_coalition if PSOE_in_government = 1 and AR_in_government = 1; center_bruning if chancellor = "Brüning"
 
 @center_op
-on-arrival: z_relation += 5*(1 - dissent)
+on-arrival: AR_relation += 5*(1 - dissent)
 
 We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
 
 @center_coalition
-on-arrival: z_relation += 8*(1 - dissent)
+on-arrival: AR_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
 @center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
+on-arrival: AR_relation += 5*(1 - dissent)
 
 The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
 
@@ -89,31 +89,31 @@ The Brüning semi-autocratic regime makes building friendly relations difficult,
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
+on-arrival: resources -= 1; PRR_relation += 5*(1 - dissent)
+go-to: DLR_stresemann if stresemann_dead = 0; DLR_loss if stresemann_dead = 1 and year <= 1930; DLR_moribound if year > 1930
 
-The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
+The [+ PRR_name +] has been one of our closest allies through the course of the Republic.
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+@DLR_stresemann
+on-arrival: DLR_relation += 8*(1 - dissent)
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+Gustav Stresemann, the leader of the DLR is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
 
-@dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
+@DLR_loss
+on-arrival: DLR_relation += 5*(1 - dissent)
 
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
+With the death of Gustav Stresemann, the DLR is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
 
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+However, given the influence of the DLR among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
-@dvp_moribound
-on-arrival: dvp_relation += 5*(1 - dissent)
+@DLR_moribound
+on-arrival: DLR_relation += 5*(1 - dissent)
 
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
+The liberal parties (both the [+ PRR_name +] and DLR) are electorally moribund, so perhaps our efforts are best spent elsewhere.
 
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+However, given the influence of the DLR among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
-@spd_alone
+@PSOE_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
 

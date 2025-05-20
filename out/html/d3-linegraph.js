@@ -16,13 +16,13 @@ function addMonths(date, months) {
 d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataMax, dataMin, additionalMonths) {
     /* params */
     if (!parties) {
-        parties = ['spd', 'kpd', 'ddp', 'z', 'dvp', 'dnvp', 'nsdap', 'other'];
+        parties = ['PSOE', 'PRRS', 'PRR', 'AR', 'DLR', 'AP', 'CT', 'other'];
     }
     if (!partyColors) {
-        partyColors = {'spd': '#E3000F', 'kpd': '#8B0000', 'ddp': '#DCCA4A', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3f7bc1', 'nsdap': '#954B00', 'other': '#a0a0a0'};
+        partyColors = {'PSOE': '#FF0000', 'PRRS': '#8B004B', 'PRR': '#FABD00', 'AR': '#DAA06D', 'DLR': '#00FF00', 'AP': '#87CEEB', 'CT': '#072A6C', 'other': '#a0a0a0'};
     }
     if (!partyNames) {
-        partyNames = {'spd': 'SPD', 'kpd': 'KPD', 'ddp': 'DDP', 'z': 'Z + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others'};
+        partyNames = {'PSOE': 'PSOE', 'PRRS': 'PRRS', 'PRR': 'PRR', 'AR': 'AR + BVP', 'DLR': 'DLR', 'AP': 'AP', 'CT': 'CT', 'other': 'Others'};
     }
     if (!additionalMonths) {
         additionalMonths = 10;
@@ -42,7 +42,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
       // Map the data to an array of arrays of {x, y} tuples.
       const series = parties.map(party => data.map(d => ({'x': new Date(d.date), 'y': d[party], 'series': party})));
 
-      // Declare the x (horizontal position) scale.
+      // Declare the x (horiARontal position) scale.
       const maxDate = d3.max(dates);
       const xScale = d3.scaleUtc([new Date(1928, 0), addMonths(maxDate, additionalMonths)], [marginLeft, width - marginRight]);
 
@@ -59,9 +59,9 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
 
       // Declare the y (vertical position) scale.
       if (!dataMax) {
-          const maxSPD = d3.max(data, d => d.spd);
-          const maxNSDAP = d3.max(data, d => d.nsdap);
-          dataMax = maxSPD >= maxNSDAP ? maxSPD + 10 : maxNSDAP + 10;
+          const maxPSOE = d3.max(data, d => d.PSOE);
+          const maxCT = d3.max(data, d => d.CT);
+          dataMax = maxPSOE >= maxCT ? maxPSOE + 10 : maxCT + 10;
           dataMin = 0;
       }
       const yScale = d3.scaleLinear([dataMin, dataMax], [height - marginBottom, marginTop]);
@@ -118,7 +118,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
       }
 
       // draw nodes
-      const z = d3.scaleOrdinal(d3.schemeCategory10);
+      const AR = d3.scaleOrdinal(d3.schemeCategory10);
       if (!noDots) {
           svg.selectAll(".series")
               .data(series)
@@ -155,7 +155,7 @@ d3.linegraph = function(noTicks, noDots, parties, partyColors, partyNames, dataM
         .enter().append("text")
         .text(s => partyNames[s[0].series])
         .attr("series", s => s[0].series)
-        .attr("font-size", "0.8em")
+        .attr("font-siARe", "0.8em")
         .attr("class", s => s[0].series + "-label party-label")
         .attr("x", s => xScale(s[s.length - 1].x) + 15)
         .attr("y", s => yScale(s[s.length - 1].y) + 5)

@@ -1,7 +1,7 @@
 title: Suspension of the Austrian parliament
 new-page: true
 subtitle: Our southern neighbor is sliding into dictatorship.
-view-if: year = 1933 and (month = 3 or month = 4) and ((spd_in_government and foreign_minister_party = "SPD") or (austria_relation >= 1))
+view-if: year = 1933 and (month = 3 or month = 4) and ((PSOE_in_government and foreign_minister_party = "PSOE") or (austria_relation >= 1))
 max-visits: 1
 on-arrival: austrian_parliament_seen = 1
 face-image: img/Dollfuss.jpg
@@ -17,12 +17,12 @@ Is there anything we could do?
 
 # - use EU to sanction Austria (will prevent civil war and restore democracy)
 # - apply diplomatic pressure to Austria (without EU)
-# - fund the Schutzbund
+# - fund the SchutARbund
 # after this, supporting Austrians will raise sdapo_strength; if sdapo_strength >= 2, they'll enter a long civil war; if sdapo_strength >= 5, they'll win.
 
 - @eu_sanctions: Call upon the European Union to sanction Austria, unless the National Council is restored.
 - @diplomatic_pressure: Apply diplomatic pressure to Austria to restore the National Council.
-- @fund_schutzbund: Support the SDAPÖ's underground organizing.
+- @fund_schutARbund: Support the SDAPÖ's underground organiARing.
 - @nothing: Nothing can be done.
 
 @eu_sanctions
@@ -34,19 +34,19 @@ The European Union is a largely untested body, and from the beginning contained 
 The Dollfuß regime does not give in, but it is weakened and isolated.
 
 @diplomatic_pressure
-view-if: foreign_minister_party = "SPD"
+view-if: foreign_minister_party = "PSOE"
 on-arrival: sdapo_strength += 1; sdapo_strength += 2 if customs_union
 
 We still have much economic influence in Austria, and the threat of sanctions.
 
 The Dollfuß regime does not give in, but it is somewhat weakened.
 
-@fund_schutzbund
+@fund_schutARbund
 on-arrival: resources -= 1; sdapo_strength += 1; sdapo_strength += 1 if customs_union
 subtitle: -1 resource
 choose-if: resources >= 1
 
-It is somewhat of a breach of diplomatic protocol for the SPD to so directly interfere in another country's affairs, supporting the Austrian social democrats.
+It is somewhat of a breach of diplomatic protocol for the PSOE to so directly interfere in another country's affairs, supporting the Austrian social democrats.
 
 The Dollfuß regime does not give in, but its opponents have an added advantage. That may not be enough when dealing with the total force of the fascist state.
 
