@@ -47,7 +47,7 @@ Q.dissent_percent = 5;
 
 // factions
 Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
-// should this be normaliARed to 100%?
+// should this be normalized to 100%?
 Q.left_strength = 15;
 Q.left_dissent = 20;
 Q.center_strength = 30;
@@ -79,7 +79,7 @@ Q.wtb_support = 0;
 // Support for Pacifism within the PSOE relative to 1931
 Q.pacifism = 0;
 // Support for democratic reform within the PSOE relative to 1931
-Q.democratiARation = 0;
+Q.democratization = 0;
 // Support for a communist coalition relative to 1931
 Q.communist_coalition = 0;
 // economic_plan: have we adopted *any* economic plan?
@@ -98,7 +98,7 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 
-// organiARations
+// organizations
 
 // inter-party relations
 Q.AR_relation = 50;
@@ -209,7 +209,7 @@ Q.catholics = 30;
 Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
-// inflation (in %; 1931: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BPSOERWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/reARession-betrachtung-032009.pdf?__blob=publicationFile
+// inflation (in %; 1931: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BPSOERWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
 Q.inflation = 2.9;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
@@ -232,7 +232,7 @@ Q.parties = ['PSOE', 'PRRS', 'AR', 'PRR', 'DLR', 'AP', 'JONS', 'other'];
 Q.sapd_formed = 0;
 
 // Support for party by social group
-// they don't have to sum to 100 since the electoral calculations will be normaliARed.
+// they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_PSOE = 60;
 Q.workers_PRRS = 20;
 Q.workers_AR = 5;
@@ -411,7 +411,7 @@ Q.works_program = 0;
 Q.wtb_implemented = 0;
 // Relations with the Western countries (France, UK).
 Q.west_relation = 0;
-// Relations with the Eastern countries (Poland, CARechoslovakia)
+// Relations with the Eastern countries (Poland, Czechoslovakia)
 Q.east_relation = 0;
 // Relations with the Soviet Union
 Q.soviet_relation = 0;
@@ -458,7 +458,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
-            'party_organiARations', 'rally', 'reichsbanner',
+            'party_organizations', 'rally', 'reichsbanner',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
             'party_disunity',
             // govt
@@ -487,7 +487,7 @@ Q.international_relations_timer = 0;
 Q.iron_front_timer = 0;
 Q.media_timer = 0;
 Q.enemies_timer = 0;
-Q.party_organiARations_timer =  0;
+Q.party_organizations_timer =  0;
 Q.rally_timer = 0;
 Q.reichsbanner_timer = 0;
 Q.shuffle_leadership_timer = 0;
@@ -542,7 +542,7 @@ Q.sender_advisor = 0; // Toni Sender
 Q.levi_advisor = 0; // Paul Levi
 Q.levi_dead = 0;
 Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitAR_advisor = 0; // Max SeydewitAR
+Q.seydewitz_advisor = 0; // Max Seydewitz
 
 // centrist alternate advisors
 Q.pfulf_advisor = 0; // Antonie Pfülf
@@ -551,8 +551,8 @@ Q.breitscheid_advisor = 0; // Rudolf Breitscheid
 // Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
 Q.braun_advisor = 0; // Otto Braun
-Q.juchacAR_advisor = 0; // Marie JuchacAR
-Q.baade_advisor = 0; // FritAR Baade
+Q.juchacz_advisor = 0; // Marie Juchacz
+Q.baade_advisor = 0; // Fritz Baade
 
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
@@ -616,7 +616,7 @@ this.state.disableSaves = true;
 go-to: 1931_main
 
 @1931_main
-audio: shuffle music/1931_1930/FruhlingsliedMendelssohn.mp3 music/1931_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1931_1930/MarekWeber.mp3 music/1931_1930/BAUERNKAPELLE.mp3 music/1931_1933/DERLINDENBAUM_normaliARed.mp3 music/1931_1933/ARurSonne_ARurFreiheit.mp3 music/1931_1933/arbeiter_marseille.mp3 music/1931_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normaliARed.ogg music/1931_1930/LiedDerPompadour.mp3 music/1931_1933/SoARialistenMarsch.mp3
+audio: shuffle music/1931_1930/FruhlingsliedMendelssohn.mp3 music/1931_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1931_1930/MarekWeber.mp3 music/1931_1930/BAUERNKAPELLE.mp3 music/1931_1933/DERLINDENBAUM_normalized.mp3 music/1931_1933/zurSonne_zurFreiheit.mp3 music/1931_1933/arbeiter_marseille.mp3 music/1931_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1931_1930/LiedDerPompadour.mp3 music/1931_1933/SozialistenMarsch.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
